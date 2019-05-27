@@ -1,0 +1,31 @@
+<h1>Login</h1>
+</br></br>
+
+<a href="/">Home</a>
+<a href="/contact">Contact</a>
+<a href="/mention">Mentions</a>
+<a href="/service">Services</a>
+<a href="/login">Login</a>
+<a href="/cv">CV</a>
+<a href="/blog">Blog</a>
+<a href="/admin">Admin</a>
+<a href="/test">Test</a>
+
+</br></br>
+
+<form class="ui form" action="/login/register" method="POST" enctype="multipart/form-data">
+
+    <label>Name</label>
+    <input type="text" name="name" placeholder="Identifiant" value={{data.name}}>
+
+    <label>E-mail</label>
+    <input type="email" name="email" placeholder="example@protonmail.com" value={{data.email}}>
+
+    <label>Mot De Passe</label>
+    <input type="password" name="password" placeholder="Mot de passe" value={{data.password}}>
+
+    <button class="ui button" type="submit">Submit</button>
+
+</form>
+
+</br></br>

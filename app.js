@@ -12,13 +12,24 @@ const express        = require('express')
 
 // Router
 ,     router      = express.Router()
+
 ,     homePage    = require('./controllers/homePage')
 ,     contactPage = require('./controllers/contactPage')
 ,     blogPage    = require('./controllers/blogPage')
+,     mentionPage = require('./controllers/mentionPage')
+,     servicePage = require('./controllers/servicePage')
+,     loginPage   = require('./controllers/loginPage')
+,     cvPage      = require('./controllers/cvPage')
+,     adminPage   = require('./controllers/adminPage')
+
+,     testPage    = require('./controllers/testPage')
 
 //___________________________ DB
-mongoose
-      .connect('mongodb://localhost:27017/portfolio', { useNewUrlParser: true });
+mongoose 
+        // .connect(db , { useNewUrlParser: true })
+        .connect('mongodb://localhost:27017/portfolio', { useNewUrlParser: true })
+        .then(()    => console.log('Connecter a MongoDB Cloud'))
+        .catch(err  => console.log(err));
 
 // connect-flash
 app.use(connectFlash())
@@ -70,6 +81,13 @@ app.use(router)
 app.use('/'        , homePage)
 app.use('/contact' , contactPage)
 app.use('/blog'    , blogPage)
+app.use('/mention' , mentionPage)
+app.use('/service' , servicePage)
+app.use('/login'   , loginPage)
+app.use('/admin'   , adminPage)
+app.use('/cv'      , cvPage)
+
+app.use('/test'    , testPage)
 
 //___________________________ Page Error
 app.use((req, res) => {
