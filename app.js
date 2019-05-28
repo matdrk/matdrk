@@ -67,7 +67,6 @@ app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
 app.set('view engine', 'hbs');
 app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
-    console.log(res.locals.user);
     next();
 })
 
