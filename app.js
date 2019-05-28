@@ -11,18 +11,7 @@ const express        = require('express')
 ,     mongoStore     = MongoStore(expressSession)
 
 // Router
-,     router      = express.Router()
-
-,     homePage    = require('./controllers/homePage')
-,     contactPage = require('./controllers/contactPage')
-,     blogPage    = require('./controllers/blogPage')
-,     mentionPage = require('./controllers/mentionPage')
-,     servicePage = require('./controllers/servicePage')
-,     loginPage   = require('./controllers/loginPage')
-,     cvPage      = require('./controllers/cvPage')
-,     adminPage   = require('./controllers/adminPage')
-
-,     testPage    = require('./controllers/testPage')
+,     routes         = require('./api/index')
 
 //___________________________ DB
 mongoose 
@@ -75,19 +64,14 @@ app.use('*', (req, res, next) => {
     next();
 })
 
-// Routes
-app.use(router)
+//user or not user
+app.use('*', function(req, res, next) {
+    res.locals.user = req.session.userId;
+    next()
+});
 
-app.use('/'        , homePage)
-app.use('/contact' , contactPage)
-app.use('/blog'    , blogPage)
-app.use('/mention' , mentionPage)
-app.use('/service' , servicePage)
-app.use('/login'   , loginPage)
-app.use('/admin'   , adminPage)
-app.use('/cv'      , cvPage)
-
-app.use('/test'    , testPage)
+//routes
+app.use('/', routes);
 
 //___________________________ Page Error
 app.use((req, res) => {

@@ -9,6 +9,7 @@
   "author": "Mat - Drk",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
@@ -16,6 +17,8 @@
     "express-fileupload": "^1.1.4",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.1",
+    "handlebars": "^4.1.2",
+    "handlebars.moment": "^1.0.4",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
     "nodemon": "^1.19.0"
