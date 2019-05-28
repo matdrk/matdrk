@@ -5,10 +5,8 @@ const express = require('express')
     , path    = require('path')
     , fs      = require('fs') 
 
-router.get('/', async (req, res, next) => {
+    module.exports = async (req, res, next) => {
 
     res.render('mention')
 
-})
-
-module.exports = router;
+}
