@@ -20,7 +20,10 @@ const server = http.Server(app);
 //___________________________ DB
 mongoose 
         // .connect(db , { useNewUrlParser: true })
-        .connect('mongodb://localhost:27017/portfolio', { useNewUrlParser: true })
+        .connect('mongodb://localhost:27017/portfolio', {
+            useCreateIndex: true,
+            useNewUrlParser: true
+          })
         .then(()    => console.log('Connecter a MongoDB Cloud'))
         .catch(err  => console.log(err));
 
