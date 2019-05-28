@@ -13,6 +13,10 @@ const express        = require('express')
 // Router
 ,     routes         = require('./api/index')
 
+var PORT = process.env.PORT || 1711;
+const http = require('http');
+const server = http.Server(app);
+
 //___________________________ DB
 mongoose 
         // .connect(db , { useNewUrlParser: true })
@@ -78,6 +82,6 @@ app.use((req, res) => {
     res.render('404')
 })
 
-app.listen(process.env.PORT || 1711, function () {
+server.listen(PORT, function () {
     console.log("*******************************************\n***** Welcome to Apps, listen port 1711 ***\n*******************************************\n*******************************************\n*********** http://localhost:1711 *********\n*******************************************\n");
 });
