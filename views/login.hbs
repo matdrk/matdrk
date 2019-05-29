@@ -1,18 +1,123 @@
+<!-- Start Footer Section-->
 
 
-<form class="ui form" action="/login/register" method="POST" enctype="multipart/form-data">
+    <div id="footer" class="footer-main center-align gradient-color">
 
-    <label>Name</label>
-    <input type="text" name="name" placeholder="Identifiant" value={{data.name}}>
+        <div class="main-section">
 
-    <label>E-mail</label>
-    <input type="email" name="email" placeholder="example@protonmail.com" value={{data.email}}>
+            <div class="container">
 
-    <label>Mot De Passe</label>
-    <input type="password" name="password" placeholder="Mot de passe" value={{data.password}}>
+                <!--Title-->
+                <h4 class="reflection-text p-b-2">Connection</h4>
 
-    <button class="ui button" type="submit">Submit</button>
+                <div class="contact-container">
 
-</form>
+                    <!-- Contact Form -->
+                    <form id="contact-form" name="contact-form" method="POST" data-name="Contact Form">
 
-</br></br>
+                        <div class="row">
+
+                            <!-- Name Field -->
+                            <div class="input-field col s12">
+
+                                <i class="fa fa-user-o prefix" aria-hidden="true"></i>
+                                <input id="contact-name" type="text" class="validate" name="first_name" required>
+                                <label for="contact-name">Name*</label>
+
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                                <input id="contact-email" type="email" class="validate" name="email" required>
+                                <label data-error="Invalid Email"  for="contact-email">Email*</label>
+
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
+                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Mdp</label>
+
+                            </div>
+
+                            <!-- Form Alert Message -->
+                            <div class="col s12 alert-message" id="contact-alert-message"></div>
+
+                            <!-- Submit Button -->
+                            <div class="col s12">
+
+                                <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Inscription</button>
+
+                            </div>
+
+                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
+                            <div class="input-field col s12 hidden">
+
+                                <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    <div class="address">
+                            <!-- Contact Form -->
+                    <form id="contact-form" name="contact-form" method="POST" data-name="Contact Form">
+
+                        <div class="row">
+
+                            <!-- Email Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                                <input id="contact-email" type="email" class="validate" name="email" required>
+                                <label data-error="Invalid Email"  for="contact-email">Email*</label>
+
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
+                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Mdp</label>
+
+                            </div>
+
+                            <!-- Form Alert Message -->
+                            <div class="col s12 alert-message" id="contact-alert-message"></div>
+
+                            <!-- Submit Button -->
+                            <div class="col s12">
+
+                                <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Connection</button>
+
+                            </div>
+
+                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
+                            <div class="input-field col s12 hidden">
+
+                                <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
+
+                            </div>
+
+                        </div>
+
+                    </form>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
