@@ -1,0 +1,262 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.parallax-container {
+    height: 200px;
+}
+
+nav {
+    height: 8em;
+}
+
+nav a {
+    color: black;
+}
+
+footer {
+    position: relative;
+    z-index: 999;
+}
+
+a {
+    color: #c4c9e6;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #b8c2f7;
+    transition: all 0.5s;
+}
+
+.card {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.card .card-content {
+    min-height: 20em;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    top: -2px;
+}
+
+.card-image:hover,
+.card-image:focus,
+.card-image:active {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+a.btn-floating:hover,
+a.btn-floating:focus,
+a.btn-floating:active {
+    background-color: #6c80e8;
+    transition: all 1s;
+}
+
+.page-footer {
+    background-color: #5b6bc1;
+}
+
+.fixed-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1002;
+}
+
+.nav-wrapper {
+    background-color: white;
+    z-index: 1000;
+}
+
+a#nav-logo {
+    color: #444;
+    letter-spacing: 15px;
+    font-size: 35px;
+    font-family: 'Raleway', sans-serif;
+}
+
+p.nav-subtext {
+    color: #444;
+}
+
+nav ul a {
+    color: #444;
+    letter-spacing: 1px;
+}
+
+nav ul a:hover,
+nav ul a:active,
+nav ul a:focus {
+    color: #444;
+    background-color: rgb(209, 250, 228);
+}
+
+#pixel-banner {
+    width: 100%;
+    position: fixed;
+    background-attachment: cover;
+    top: 0;
+}
+
+.more-content {
+    position: relative;
+    width: 100% ;
+    background-color: white;
+    padding-top: 9em;
+    padding-bottom: 9em;
+    padding-left: 10em;
+    padding-right: 10em;
+}
+
+@media screen and (max-width: 800px) {
+    .more-content {
+        padding: 1em;
+    }
+}
+
+.headshot {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 992px) {
+    .headshot {
+        width: 60%;
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .headshot {
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+.bio-p {
+    font-size: 1.2em;
+    margin-right: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    .bio-p {
+        margin-right: 0;
+    }
+}
+
+.port-header {
+    text-align: center;
+    font-size: 2.25em;
+    letter-spacing: 3px;
+}
+
+.white-bg {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    padding: 5em 10% 10em;
+    z-index: 1001;
+}
+
+@media screen and (max-width: 800px) {
+    .white-bg {
+        padding: 1em 0 4em;
+    }
+}
+
+.chip {
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 35px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 0 30px;
+    background-color: #d1fae4;
+}
+
+@media screen and (max-width: 600px) {
+    .chip {
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        margin-right: 10px;
+        padding: 0 15px;
+    }
+}
+
+.contact-icons-div {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    width: 70px;
+    height: 300px;
+    z-index: 1003;
+}
+
+.linkedin-icon {
+    position: fixed;
+    width: 3em;
+    right: 29px;
+    bottom: 90px;
+    transition: all 1s;
+}
+
+.github-icon {
+    position: fixed;
+    width: 3em;
+    right: 29px;
+    bottom: 155px;
+    transition: all 1s;
+}
+
+.stackoverflow-icon {
+    position: fixed;
+    width: 3em;
+    right: 29px;
+    bottom: 220px;
+    transition: all 1s;
+}
+
+.hidden-icons-div {
+    position: fixed;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.shown-icons-div {
+    opacity: 1;
+    display: block;
+    transition: all 1s;
+}
+
+.code-section-div {
+    min-height: 80vh;
+    width: 100%;
+    margin: 4em 0;
+    padding: 2em 10%;
+    position: relative;
+    background-color: white;
+}
+
+.contact-div {
+    width: 100%;
+    background-color: #fff;
+    padding: 4em 20%;
+}
