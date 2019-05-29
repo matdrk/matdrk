@@ -1111,7 +1111,6 @@ a:visited {
 #main-header {
     position: relative;
     height: 100vh;
-    max-height: 900px;
     min-height: 700px;
     background-size: cover;
     color: #ffffff;
