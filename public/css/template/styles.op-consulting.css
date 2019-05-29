@@ -27207,6 +27207,7 @@ pre[class*="language-"] .toolbar-item a {
 ------------------------------------*/
 .g-bg-size-cover {
   background-size: cover !important;
+  height: 100vh;
 }
 
 .g-bg-size-100x {
