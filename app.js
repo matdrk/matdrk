@@ -11,23 +11,19 @@ const express        = require('express')
 ,     mongoStore     = MongoStore(expressSession)
 
 // Router
-,     router      = express.Router()
+,     routes         = require('./api/index')
 
-,     homePage    = require('./controllers/homePage')
-,     contactPage = require('./controllers/contactPage')
-,     blogPage    = require('./controllers/blogPage')
-,     mentionPage = require('./controllers/mentionPage')
-,     servicePage = require('./controllers/servicePage')
-,     loginPage   = require('./controllers/loginPage')
-,     cvPage      = require('./controllers/cvPage')
-,     adminPage   = require('./controllers/adminPage')
-
-,     testPage    = require('./controllers/testPage')
+var PORT = process.env.PORT || 1711;
+const http = require('http');
+const server = http.Server(app);
 
 //___________________________ DB
 mongoose 
         // .connect(db , { useNewUrlParser: true })
-        .connect('mongodb://localhost:27017/portfolio', { useNewUrlParser: true })
+        .connect('mongodb://localhost:27017/portfolio', {
+            useCreateIndex: true,
+            useNewUrlParser: true
+          })
         .then(()    => console.log('Connecter a MongoDB Cloud'))
         .catch(err  => console.log(err));
 
@@ -71,29 +67,23 @@ app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
 app.set('view engine', 'hbs');
 app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
-    console.log(res.locals.user);
     next();
 })
 
-// Routes
-app.use(router)
+//user or not user
+app.use('*', function(req, res, next) {
+    res.locals.user = req.session.userId;
+    next()
+});
 
-app.use('/'        , homePage)
-app.use('/contact' , contactPage)
-app.use('/blog'    , blogPage)
-app.use('/mention' , mentionPage)
-app.use('/service' , servicePage)
-app.use('/login'   , loginPage)
-app.use('/admin'   , adminPage)
-app.use('/cv'      , cvPage)
-
-app.use('/test'    , testPage)
+//routes
+app.use('/', routes);
 
 //___________________________ Page Error
 app.use((req, res) => {
     res.render('404')
 })
 
-app.listen(process.env.PORT || 1711, function () {
+server.listen(PORT, function () {
     console.log("*******************************************\n***** Welcome to Apps, listen port 1711 ***\n*******************************************\n*******************************************\n*********** http://localhost:1711 *********\n*******************************************\n");
 });
