@@ -11,6 +11,7 @@ const router = express.Router()
     , loginRegister = require('./controllers/loginRegister')
     , cvPage = require('./controllers/cvPage')
     , adminPage = require('./controllers/adminPage')
+    , aboutPage = require('./controllers/aboutPage')
 
     , testPage = require('./controllers/testPage')
 
@@ -21,6 +22,8 @@ router.get('/contact', contactPage)
 router.get('/blog', blogPage)
 router.get('/mention', mentionPage)
 router.get('/service', servicePage)
+router.get('/about', aboutPage)
+
 //login
 router.get('/login', loginPage)
 router.post('/login/register', loginRegister)
