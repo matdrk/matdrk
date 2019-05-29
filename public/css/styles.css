@@ -1559,7 +1559,7 @@ a:visited {
 
 #showcase .info i {
     padding-right: 1rem;
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     color: transparent;
     font-size: 1.7rem
 }
@@ -1814,7 +1814,7 @@ a:visited {
 
 #team .team-name {
     color: transparent;
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     margin: 0;
     padding: 1rem;
     border-top: none
@@ -2102,7 +2102,7 @@ a:visited {
     opacity: 1;
     font-size: 1rem;
     color: transparent;
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     padding-right: 0.5rem
 }
 
@@ -2179,7 +2179,6 @@ a:visited {
 }
 
 #video .icon-button i:before {
-    speak: none;
     line-height: 90px;
     font-style: normal;
     font-weight: normal;
@@ -2389,7 +2388,7 @@ a:visited {
 }
 
 #statistics i {
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     border-radius: 100px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     width: 100px;
