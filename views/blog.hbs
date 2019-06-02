@@ -12,7 +12,7 @@
 
                 <div class="p-t-2 grid center-align row">
 {{!--  --}}
-                    {{#each dbBlogs }}
+                    {{#each dbArticles }}
                     <div class="single-news col s12 m6 l4">
 
                         <!-- Link to the blog news post -->
@@ -21,7 +21,7 @@
                             <figure>
 
                                 <!-- Post Image -->
-                                <img class="responsive-img" src={{imgBlog}} alt="news image">
+                                <img class="responsive-img" src={{img}} alt="news image">
 
                                 <figcaption>
 
@@ -56,24 +56,24 @@
                                 <!-- Post Writer Name -->
                                 <span>
                             <i class="fa fa-user gradient-color" aria-hidden="true"></i>
-                            {{authorBlog}}
+                            {{author}}
                         </span>
 
                                 <!-- Post Date -->
                                 <span>
                             <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
-                            {{created-date}}
+                            {{serie}}
                         </span>
 
                             </p>
 
                             <!-- Post Title -->
                             <a href="#">
-                                <h5>Lorem ipsum dolor sit.</h5>
+                                <h5>{{ title }}</h5>
                             </a>
 
                             <!-- Post Excerpt -->
-                            <p class="p-b-1">{{contentBlog}}</p>
+                            <p class="p-b-1">{{content}}</p>
 
                             <!-- Post Link -->
                             <a href="#" class="shadow-button waves-effect waves-light">

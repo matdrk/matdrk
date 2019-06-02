@@ -4,14 +4,14 @@ const express = require('express')
     , router  = express.Router()
     , path    = require('path')
     , fs      = require('fs') 
-    , artBlog = require('../database/models/ArticleBlog')
+    , article = require('../database/models/Article')
 
     module.exports = async (req, res, next) => {
-        const dbBlogs = await artBlog.find({})
+        const dbArticles = await article.find({})
 
-        console.log( {dbBlogs} );
+        console.log( {dbArticles} );
         
-    res.render('blog', { dbBlogs })
+    res.render('blog', { dbArticles })
 
 }
 

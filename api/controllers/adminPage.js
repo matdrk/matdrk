@@ -5,12 +5,12 @@ const express = require('express')
     , path    = require('path')
     , fs      = require('fs') 
     , User    = require('../database/models/User')
-    , artBlog = require('../database/models/ArticleBlog')
+    , article = require('../database/models/Article')
 
 
 router.get('/', async (req, res, next) => {
     const dbUsers  = await User.find({})
-    ,     dbBlogs  = await artBlog.find({})
+    ,     dbBlogs  = await article.find({})
     ,     sess     = req.session;
 
     if (req.session.status !== "admin") {
@@ -69,22 +69,22 @@ router.get('/delete/:id', (req, res) => {
     res.redirect('/admin');
 });
 
-router.get('/edit/blog/:id', async (req, res, next) => {
-    const postItemBlog = await artBlog.findById(req.params.id)
+router.get('/edit/:id', async (req, res, next) => {
+    const postItemBlog = await article.findById(req.params.id)
     if (req.session.userId) {
         return res.render("editBlog", { postItemBlog })
     }
     res.render('/user/login')
 })
 
-router.post('/blogPost/:id', async (req, res, next) => {
-    const { imgBlog } = req.files
-        , uploadFile = path.resolve(__dirname, '../..', 'public/images/artBlog', imgBlog.name);
+router.post('/articlePost', async (req, res, next) => {
+    const { img } = req.files
+        , uploadFile = path.resolve(__dirname, '../..', 'public/images/artBlog', img.name);
 
-    imgBlog.mv(uploadFile, (error) => {
-        artBlog.create({
+    img.mv(uploadFile, (error) => {
+        article.create({
             ...req.body,
-            imageBlog: `/assets/images/artBlog/${imgBlog.name}`
+            img: `/assets/images/artBlog/${img.name}`
         },
             (error, post) => {
                 res.redirect('/blog')
@@ -92,15 +92,15 @@ router.post('/blogPost/:id', async (req, res, next) => {
     })
 })
 
-router.post('/edit/blogPost/:id', async (req, res, next) => {
+router.post('/edit/articlePost/:id', async (req, res, next) => {
     let query = { _id: req.params.id }
-    const { imgBlog } = req.files
-    const uploadFile = path.resolve(__dirname, '../..', 'public/images/artblog', imgBlog.name);
-    imgBlog.mv(uploadFile, (error) => {
-        artBlog.findOneAndUpdate(
+    const { img } = req.files
+    const uploadFile = path.resolve(__dirname, '../..', 'public/images/artblog', img.name);
+    img.mv(uploadFile, (error) => {
+        article.findOneAndUpdate(
             query, {
                 ...req.body,
-                imgBlog: `/images/artblog/${imgBlog.name}`
+                img: `/images/artblog/${img.name}`
             },
             { useFindAndModify: false }
             , function (error, post) {
