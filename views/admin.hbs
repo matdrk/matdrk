@@ -1,0 +1,99 @@
+<section id="user" class="main-section center-align" data-scroll-index="7">
+    <div class="container">
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Users</h4>
+        <!-- Description -->
+        <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
+        <div class="row">
+
+            {{#each dbUsers }}
+            <div class="col s12 l4">
+                <a href="/admin/edit/user/{{_id}}">
+                    <div class="icon s6 p-tb-2">
+                        <img class="fa fa-3x waves-circle" src="{{ imgUser }}">
+                        {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
+                    </div>
+                    <h5 class="p-tb-1">{{ name }}</h5>
+                    <p> Mail: {{ email }} </p>
+                    <p> Id: {{ _id }} </p>
+                    <p> Status: {{ status }} </p>
+                    <p> Bio: {{ bio }} </p>
+                </a>
+            </div>
+            {{/each }}
+
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="main-section center-align" data-scroll-index="7">
+    <div class="container">
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Blog</h4>
+        <!-- Description -->
+        <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
+        <div class="row">
+
+            {{#each dbBlogs }}
+            <div class="col s12 l4">
+                <a href="/admin/edit/blog/{{_id}}">
+                    <div class="icon s6 p-tb-2">
+                        <img class="fa fa-3x waves-circle" src={{ imgBlog }}>
+                        {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
+                    </div>
+                    <h5 class="p-tb-1">{{ titleBlog }}</h5>
+                    <p> Author: {{ authorBlog }} </p>
+                    <p> Id: {{ _id }} </p>
+                    <p> Content: {{ contentBlog }} </p>
+                </a>
+            </div>
+            {{/each }}
+
+            <form id="formAddBlog" action="/admin/blogPost" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <h4><label for=""><u>Titre :</u> (1 word)</label></h4>
+                    <input type="text" name="titleBlog" placeholder="Search">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+
+                    <h4><label for=""><u>Image :</u></label></h4>
+                    <input type="file" name="imgBlog" (change)="fileEvent($event)" class="inputfile"
+                        id="embedpollfileinput">
+                    <label for="embedpollfileinput" class="ui huge green right floated button">
+                        <i class="ui upload icon"></i>
+                        Upload image
+                    </label>
+                    <h4><label for=""><u>Lien Image :</u></label></h4>
+                    <input type="text" name="imgBlog" placeholder="link image">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                    <h4><label for=""><u>Author :</u> (1 word)</label></h4>
+                    <input type="text" name="authorBlog" placeholder="Search">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+        </div>
+        <div>
+            <h4><label for=""><u>Contenu :</u></label></h4>
+            <div class="control">
+                <textarea id="editorBlog" class="textarea" placeholder="Textarea" name="contentBlog">
+                </textarea>
+            </div>
+        </div>
+        <div class="actions footer modal-footer">
+            <div class="ui black deny button">
+                Annuler
+            </div>
+            <button id="addItemApp" type="submit" class="ui positive right labeled icon button is-link">
+                Confirmer
+                <i class="checkmark icon"></i>
+            </button>
+        </div>
+        </form>
+
+    </div>
+    </div>
+</section>

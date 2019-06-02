@@ -9,6 +9,8 @@ const express        = require('express')
 ,     connectFlash   = require('connect-flash')
 ,     app            = express()
 ,     mongoStore     = MongoStore(expressSession)
+,     user           = require('./api/controllers/user')
+,     admin          = require('./api/controllers/adminPage')
 
 // Router
 ,     routes         = require('./api/index')

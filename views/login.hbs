@@ -1,118 +1,123 @@
 <!-- Start Footer Section-->
-
-
-    <div id="footer" class="footer-main center-align gradient-color">
-
-        <div class="main-section">
-
-            <div class="container">
-
-                <!--Title-->
-                <h4 class="reflection-text p-b-2">Connection</h4>
-
-                <div class="contact-container">
-
-                    <!-- Contact Form -->
-                    <form id="contact-form" name="contact-form" method="POST" data-name="Contact Form">
-
+<div id="footer" class="footer-main center-align gradient-color">
+    <div class="main-section">
+        <div class="container">
+            <!--Title-->
+            <h4 class="reflection-text p-b-2">Connection</h4>
+            <div class="contact-container">
+                <!-- Contact Form -->
+                {{!-- <form id="contact-form" action="/login/register" name="contact-form" method="POST" data-name="Contact Form">
                         <div class="row">
-
                             <!-- Name Field -->
                             <div class="input-field col s12">
-
                                 <i class="fa fa-user-o prefix" aria-hidden="true"></i>
-                                <input id="contact-name" type="text" class="validate" name="first_name" required>
+                                <input id="contact-name" type="text" class="validate" name="name">
                                 <label for="contact-name">Name*</label>
-
                             </div>
-
                             <!-- Email Field -->
                             <div class="input-field col s12 m-t-1">
-
                                 <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
-                                <input id="contact-email" type="email" class="validate" name="email" required>
+                                <input id="contact-email" type="email" class="validate" name="email">
                                 <label data-error="Invalid Email"  for="contact-email">Email*</label>
-
                             </div>
-
                             <!-- Message Field -->
                             <div class="input-field col s12 m-t-1">
-
                                 <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
-                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
-                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Mdp*</label>
-
+                                <input id="contact-email" type="password" class="validate" name="password">
+                                <label for="contact-message">Mdp*</label>
                             </div>
-
                             <!-- Form Alert Message -->
                             <div class="col s12 alert-message" id="contact-alert-message"></div>
-
                             <!-- Submit Button -->
                             <div class="col s12">
-
                                 <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Inscription</button>
-
                             </div>
-
                             <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
                             <div class="input-field col s12 hidden">
-
                                 <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
-
                             </div>
-
+                        </div>
+                    </form> --}}
+                <form class="ui form" action="/login/register" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa fa-user-o prefix" aria-hidden="true"></i>
+                            <label>Identifiant</label>
+                            <input type="text" name="name">
                         </div>
 
-                    </form>
-
-                    <div class="address">
-                            <!-- Contact Form -->
-                    <form id="contact-form" name="contact-form" method="POST" data-name="Contact Form">
-
-                        <div class="row">
-
-                            <!-- Email Field -->
-                            <div class="input-field col s12 m-t-1">
-
-                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
-                                <input id="contact-email" type="email" class="validate" name="email" required>
-                                <label data-error="Invalid Email"  for="contact-email">Email*</label>
-
-                            </div>
-
-                            <!-- Message Field -->
-                            <div class="input-field col s12 m-t-1">
-
-                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
-                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
-                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Mdp*</label>
-
-                            </div>
-
-                            <!-- Form Alert Message -->
-                            <div class="col s12 alert-message" id="contact-alert-message"></div>
-
-                            <!-- Submit Button -->
-                            <div class="col s12">
-
-                                <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Connection</button>
-
-                            </div>
-
-                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
-                            <div class="input-field col s12 hidden">
-
-                                <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
-
-                            </div>
-
+                        <div class="input-field col s12 m-t-1">
+                            <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                            <label>E-mail</label>
+                            <input type="email" name="email">
                         </div>
 
-                    </form>
-                        
+                        <div class="input-field col s12 m-t-1">
+                            <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                            <label>Mot de Passe</label>
+                            <input type="password" name="password">
+                        </div>
 
+                        {{!-- <div class="field">
+                    <input type="text" placeholder="Confirmation Mot de passe">
+                </div> --}}
+
+
+                        <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
                     </div>
 
+                </form>
+                <div class="address">
+                    <!-- Contact Form -->
+                    {{!-- <form id="contact-form" action="/login/loginAuth" name="contact-form" method="POST"
+                        data-name="Contact Form">
+                        <div class="row">
+                            <!-- Email Field -->
+                            <div class="input-field col s12 m-t-1">
+                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                                <input id="contact-email" type="email" class="validate" name="email" required>
+                                <label data-error="Invalid Email" for="contact-email">Email*</label>
+                            </div>
+                            <!-- Message Field -->
+                            <div class="input-field col s12 m-t-1">
+                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                                <input id="contact-email" type="password" class="validate" name="password" required>
+                                <label for="contact-message">Mdp*</label>
+                            </div>
+                            <!-- Form Alert Message -->
+                            <div class="col s12 alert-message" id="contact-alert-message"></div>
+                            <!-- Submit Button -->
+                            <div class="col s12">
+                                <button id="contact-submit" class="gradient-color waves-effect waves-light"
+                                    type="submit">Connection</button>
+                            </div>
+                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
+                            <div class="input-field col s12 hidden">
+                                <input type="text" id="contact-check-spam" placeholder="Leave field empty"
+                                    name="check-spam">
+                            </div>
+                        </div>
+                    </form> --}}
+                    <div class="row">
+                        <form action="/login/loginAuth" method="POST" enctype="multipart/form-data">
+                            <div class="ui stacked segment">
+                                <div class="input-field col s12 m-t-1">
+                                    <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                                    <label>E-mail</label>
+                                    <input type="email" name="email">
+                                </div>
+                                <div class="input-field col s12 m-t-1">
+                                    <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                                    <label>Mot de Passe</label>
+                                    <input type="password" name="password">
+                                </div>
+                                <button class="gradient-color waves-effect waves-light" type="submit">Login</button>
+                            </div>
+
+                            <div class="ui error message"></div>
+
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -120,4 +125,5 @@
         </div>
 
     </div>
-    
+
+</div>
