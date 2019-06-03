@@ -8609,7 +8609,7 @@ input[type=range]:focus::-ms-fill-upper {
 .picker--opened .picker__holder {
     top: 0;
     background: transparent;
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
     zoom: 1;
     background: rgba(0, 0, 0, 0.32);
     -webkit-transition: background 0.15s ease-out;
@@ -8691,13 +8691,13 @@ input[type=range]:focus::-ms-fill-upper {
 .picker__select--month.browser-default {
     display: inline;
     background-color: #FFFFFF;
-    width: 40%
+
 }
 
 .picker__select--year.browser-default {
     display: inline;
     background-color: #FFFFFF;
-    width: 26%
+
 }
 
 .picker__select--month:focus,
@@ -9354,8 +9354,8 @@ button.picker__close:focus {
 
 .owl-carousel .owl-stage {
     position: relative;
-    -ms-touch-action: pan-Y;
-    -moz-backface-visibility: hidden
+    --ms-touch-action: pan-Y;
+    --moz-backface-visibility: hidden
 }
 
 .owl-carousel .owl-stage:after {
@@ -9370,12 +9370,12 @@ button.picker__close:focus {
 .owl-carousel .owl-stage-outer {
     position: relative;
     overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0)
+    --webkit-transform: translate3d(0, 0, 0)
 }
 
 .owl-carousel .owl-item,
 .owl-carousel .owl-wrapper {
-    -webkit-backface-visibility: hidden;
+    --webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
@@ -9386,7 +9386,7 @@ button.picker__close:focus {
 .owl-carousel .owl-item {
     min-height: 1px;
     float: left;
-    -webkit-backface-visibility: hidden;
+    --webkit-backface-visibility: hidden;
     -webkit-touch-callout: none
 }
 
@@ -9507,7 +9507,7 @@ button.picker__close:focus {
     background: url(owl.video.play.html) no-repeat;
     cursor: pointer;
     z-index: 1;
-    -webkit-backface-visibility: hidden;
+    --webkit-backface-visibility: hidden;
     transition: transform .1s ease
 }
 
@@ -10474,7 +10474,7 @@ button.picker__close:focus {
 
 .flipInY,
 .flipOutX {
-    -webkit-backface-visibility: visible !important
+    --webkit-backface-visibility: visible !important
 }
 
 @keyframes flipInY {
@@ -12672,35 +12672,35 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .fa-rotate-90 {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg)
 }
 
 .fa-rotate-180 {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg)
 }
 
 .fa-rotate-270 {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
     -webkit-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
     transform: rotate(270deg)
 }
 
 .fa-flip-horizontal {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
     -webkit-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1)
 }
 
 .fa-flip-vertical {
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+    --ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
     -webkit-transform: scale(1, -1);
     -ms-transform: scale(1, -1);
     transform: scale(1, -1)
