@@ -147,59 +147,37 @@
             </li>
 
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="0" href="#">Home</a>
+                <a class="waves-effect waves-light no-bg" href="/">Home</a>
             </li>
-
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="1" href="#">Features</a>
+                <a class="waves-effect waves-light" href="/service">Services</a>
             </li>
-
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="2" href="#">Screenshots</a>
+                <a class="waves-effect waves-light" href="/blog">Blog</a>
             </li>
-
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="3" href="#">Download</a>
+                <a class="waves-effect waves-light" href="/cv">CV</a>
             </li>
-
-            <!--Side Nav News DropDown-->
             <li>
-
-                <ul class="collapsible" data-collapsible="accordion">
-
-                    <li>
-
-                        <a class="collapsible-header waves-effect waves no-bg" href="#!">
-                            News
-                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-
-                        </a>
-
-                        <div class="collapsible-body">
-
-                            <a class="waves-effect waves-light no-bg" data-scroll-nav="4" href="#">News Section</a>
-                            <a class="waves-effect waves-light no-bg" href="blog.html">News Page</a>
-                            <a class="waves-effect waves-light no-bg" href="single-blog.html">Single News Page</a>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
+                <a class="waves-effect waves-light" href="/login">Connect</a>
             </li>
-
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="5" href="#">Pricing</a>
+                <a class="waves-effect waves-light" href="/contact">Contact</a>
             </li>
-
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="6" href="#">FAQs</a>
+                <a class="waves-effect waves-light" href="/about">About</a>
             </li>
-
+            {{#if user }}
             <li>
-                <a class="waves-effect waves-light" data-scroll-nav="8" href="#">Contact</a>
+                <a class="waves-effect waves-light" href="/admin">Admin</a>
             </li>
+            <li>
+                <a class="waves-effect waves-light" href="/test">Test</a>
+            </li>
+            <li>
+                <a class="waves-effect waves-light" href="/logout">Logout</a>
+            </li>
+            {{/if}}
 
             <!--Side Nav Social Icons-->
             <li class="social">
