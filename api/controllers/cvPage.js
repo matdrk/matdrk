@@ -6,8 +6,20 @@ const express = require('express')
     , fs      = require('fs')
     , pdfobject = require('pdfobject')
 
+    // DB
+    , dbUser  = require('../database/models/User')
+    
+
+
     module.exports = async (req, res, next) => {
 
     res.render('cv')
+
+    const dbUsers = await dbUser.find({})
+
+    console.log({dbUsers});
+
+    res.render('test', {dbUsers})
+
 
 }
