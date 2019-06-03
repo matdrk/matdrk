@@ -8,8 +8,6 @@ const router  = express.Router()
     , blogPage = require('./controllers/blogPage')
     , mentionPage = require('./controllers/mentionPage')
     , servicePage = require('./controllers/servicePage')
-    // , loginPage = require('./controllers/loginPage')
-    // , loginRegister = require('./controllers/loginRegister')
     , cvPage    = require('./controllers/cvPage')
     , adminPage = require('./controllers/adminPage')
     , aboutPage = require('./controllers/aboutPage')
@@ -28,10 +26,9 @@ router.get('/service' , servicePage)
 router.get('/about'  , aboutPage)
 
 //login
-// router.get('/login', loginPage)
 router.use('/login' , user )
 router.get('/logout' , logout)
-// router.post('/login/register', loginRegister)
+
 
 router.use('/admin' , adminPage)
 router.get('/cv'   , cvPage)

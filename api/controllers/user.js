@@ -13,12 +13,12 @@ const User = require('../database/models/User')
 // const auth = require('../../middleware/auth')
 //     , redirectAuthSucess = require('../../middleware/redirectAuthSucess')
 
-router.get('/add', async (req, res, next) => {
-    res.render('login', {
-        errors: req.flash('registerError'),
-        data: req.flash('data')[0]
-    })
-})
+// router.get('/add', async (req, res, next) => {
+//     res.render('login', {
+//         errors: req.flash('registerError'),
+//         data: req.flash('data')[0]
+//     })
+// })
 
 router.post('/register', async (req, res, next) => {
     User.create(
@@ -27,7 +27,7 @@ router.post('/register', async (req, res, next) => {
                 const registerError = Object.keys(error.errors).map(key => error.errors[key].message);
                 req.flash('registerError', registerError)
                 req.flash('data', req.body)
-                return res.redirect('/login/add')
+                return res.redirect('/login')
                 console.log("test");
                 
             }
@@ -46,11 +46,12 @@ router.post('/loginAuth', async (req, res, next) => {
     const { email, password } = req.body;
 
         User.findOne({ email }, (error, User) => {
+            
             req.session.email = User.email;
             req.session.name = User.name;
             req.session.status = User.status;
             req.session.userId = User._id
-            // sess = req.session;
+            sess = req.session;
             console.log(req.session.status);
             
 
@@ -66,7 +67,7 @@ router.post('/loginAuth', async (req, res, next) => {
                         } else {
                             console.log(req.body);
                             console.log('user fail');
-                            res.redirect('/service')
+                            res.redirect('/login')
                         }
                     })
                 }

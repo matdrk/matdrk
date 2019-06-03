@@ -5,6 +5,8 @@
             <!--Title-->
             <h4 class="reflection-text p-b-2">Connection</h4>
             <div class="contact-container">
+
+                
                 <!-- Contact Form -->
                 {{!-- <form id="contact-form" action="/login/register" name="contact-form" method="POST" data-name="Contact Form">
                         <div class="row">
@@ -38,24 +40,27 @@
                             </div>
                         </div>
                     </form> --}}
+
+
+
                 <form class="ui form" action="/login/register" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fa fa-user-o prefix" aria-hidden="true"></i>
                             <label>Identifiant</label>
-                            <input type="text" name="name">
+                            <input type="text" name="name" required>
                         </div>
 
                         <div class="input-field col s12 m-t-1">
                             <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
                             <label>E-mail</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" required>
                         </div>
 
                         <div class="input-field col s12 m-t-1">
                             <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
                             <label>Mot de Passe</label>
-                            <input type="password" name="password">
+                            <input type="password" name="password" required>
                         </div>
 
                         {{!-- <div class="field">
@@ -65,8 +70,10 @@
 
                         <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
                     </div>
-
                 </form>
+
+
+
                 <div class="address">
                     <!-- Contact Form -->
                     {{!-- <form id="contact-form" action="/login/loginAuth" name="contact-form" method="POST"
@@ -98,18 +105,22 @@
                             </div>
                         </div>
                     </form> --}}
+
+
+                    
+
                     <div class="row">
                         <form action="/login/loginAuth" method="POST" enctype="multipart/form-data">
                             <div class="ui stacked segment">
                                 <div class="input-field col s12 m-t-1">
                                     <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
                                     <label>E-mail</label>
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" required>
                                 </div>
                                 <div class="input-field col s12 m-t-1">
                                     <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
                                     <label>Mot de Passe</label>
-                                    <input type="password" name="password">
+                                    <input type="password" name="password" required>
                                 </div>
                                 <button class="gradient-color waves-effect waves-light" type="submit">Login</button>
                             </div>
