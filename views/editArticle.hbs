@@ -1,0 +1,80 @@
+<!-- Start Footer Section-->
+<div id="footer" class="footer-main center-align gradient-color">
+    <div class="main-section">
+        <div class="container">
+            <!--Title-->
+            <h4 class="reflection-text p-b-2">Éditer Article</h4>
+            <div class="contact-container">
+
+                <form class="ui form" action="/admin/edit/articlePost/{{dbArticles._id}}" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label>Titre:</label>
+                            <input type="text" name="title" value="{{ dbArticles.title }}" required>
+                        </div>
+                        <div class="input-field col s12">
+                            <label>Author:</label>
+                            <input type="text" name="author" value="{{ dbArticles.author }}" required>
+                        </div>
+                        <div class="input-field col s12 m-t-1">
+                            <label>Serie:</label>
+                            <input type="text" name="serie" value="{{ dbArticles.serie }}" required>
+                        </div>
+                        <div class="input-field col s12">
+                            <label>Image:</label>
+                            <input type="text" name="img" value="{{ dbArticles.img}}" required>
+                        </div>
+                        {{!-- <div class="input-field col s12">
+                            <i class="fa fa-user-o prefix" aria-hidden="true"></i>
+                            <label>Date de Création:</label>
+                            <input type="text" name="bio" value="{{ dbArticles.created_date }}" required>
+                        </div> --}}
+                        {{!-- <div class="input-field col s12">
+                            <i class="fa fa-user-o prefix" aria-hidden="true"></i>
+                            <label>Image Profile:</label>
+                            <input type="file" name="img" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput"> 
+                        </div> --}}
+
+                        {{!-- <div class="field">
+                    <input type="text" placeholder="Confirmation Mot de passe">
+                </div> --}}
+                        <div>
+                            <h4><label for=""><u>Contenu :</u></label></h4>
+                            <div class="control">
+                                <textarea id="editorBlog" value="{{ dbArticles.content }}" class="textarea"
+                                    placeholder="Textarea" name="content"></textarea>
+                            </div>
+                        </div>
+                        <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
+                    </div>
+                </form>
+
+                <div class="address">
+                    <div class="row">
+                        <div class="ui stacked segment">
+                            <div class="input-field col s12 m-t-1">
+                                <a href="/admin/edit/user/{{_id}}">
+                                    <div class="icon s6 p-tb-2">
+                                        <img class="fa fa-3x waves-circle" src="{{ dbArticles.img }}">
+                                        {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
+                                    </div>
+                                    <h5 class="p-tb-1">{{ dbArticles.title }}</h5>
+                                    <p> Author: {{ dbArticles.author }} </p>
+                                    <p> Id: {{ dbArticles._id }} </p>
+                                    <p> Créé le: {{ dbArticles.created_date }} </p>
+                                    <p> Contenu: {{ dbArticles.content }} </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div></br>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

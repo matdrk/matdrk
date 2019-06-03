@@ -10,8 +10,8 @@
   }
   #dash {
     margin: auto;
-    width: 95%;
-    height: 30vh;
+    width:  auto;
+    height: 40vh;
     overflow: hidden;
   }
   #dash p {
@@ -24,11 +24,6 @@
 /* FILTER */
 /* ****** */
 .filterDiv {
-    color: #ffffff;
-    width: auto;
-    line-height: 100px;
-    text-align: center;
-  
     display: none;  /* Hidden by default */
   }
   .filterAdd {
