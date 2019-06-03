@@ -49,6 +49,12 @@
             </li>
             {{#if user }}
             <li>
+                <a class="waves-effect waves-light" href="/logout">Logout</a>
+            </li>
+            {{/if}}
+
+            {{#if admin }}
+            <li>
                 <a class="waves-effect waves-light" href="/admin">Admin</a>
             </li>
             <li>
@@ -140,7 +146,7 @@
 
             <!--Side Nav Add Logo and Name here-->
             <li>
-                <a class="waves-effect waves-light home  no-bg" data-scroll-nav="0" href="#">
+                <a class="waves-effect waves-light home  no-bg" href="#">
                     <img class="responsive-img logo" src="http://listdotick.com/blog/wp-content/uploads/2016/12/code_icon.png" alt="logo">
                     <img class="responsive-img title" src="https://trekdesgazelles.com/trek/wp-content/uploads/2016/04/titre-portfolio-tdg-4.png" alt="img">
                 </a>
