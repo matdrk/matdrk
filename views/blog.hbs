@@ -1,6 +1,3 @@
-
-
-
 <!-- Start News Section-->
 <section id="news" data-scroll-index="4" class="main-section center-align">
 
@@ -17,7 +14,7 @@
             {{#each dbArticles }}
                     <div class="single-news col s12 m6 l4">
                         <!-- Link to the blog news post -->
-                        <a href="single-blog.html">
+                        <a href="/articles/{{_id}}">
                             <figure>
                                 <!-- Post Image -->
                                 <img class="responsive-img" src={{img}} alt="news image">
@@ -51,13 +48,13 @@
                                 </span>
                             </p>
                             <!-- Post Title -->
-                            <a href="#">
+                            <a href="/articles/{{_id}}">
                                 <h5>{{ title }}</h5>
                             </a>
                             <!-- Post Excerpt -->
                             <p class="p-b-1">{{ content }}</p>
                             <!-- Post Link -->
-                            <a href="#" class="shadow-button waves-effect waves-light">
+                            <a href="/articles/{{_id}}" class="shadow-button waves-effect waves-light">
                                 Read more
                                 <i class="fa fa-arrow-right"></i>
                             </a>

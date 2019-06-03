@@ -1,6 +1,14 @@
 <!-- Start News Section-->
 <section id="news" data-scroll-index="4" class="main-section center-align">
+
     <div class="container">
+
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Dernière Actu</h4>
+
+        <!-- Description -->
+        <p class="p-t-1 desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet corporis, cupiditate dolores ipsa ipsam maiores molestias nesciunt, nihil odio quae, quo ratione soluta.</p><br/>
+
         <div id="myBtnContainer">
             <!--Title-->
             <a id="filter" class="item btn" onclick="filterSelection('blog')">
@@ -13,14 +21,15 @@
                 <p> Services</p>
             </a>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <div class="p-t-2 grid center-align row">
+
+        <div class="p-t-2 grid center-align owl-carousel owl-news">
+
+                <div class="p-t-2 grid center-align row"></div>
                     {{!--  --}}
                     {{#each dbArticles }}
-                    <div class="single-news col s12 m6 l4 filterDiv {{ serie }}" value={{ serie }}>
+                    <div class="single-news filterDiv {{ serie }}" value="{{ serie }}">
                         <!-- Link to the blog news post -->
-                        <a href="single-blog.html">
+                        <a href="/articles/{{_id}}">
                             <figure>
                                 <!-- Post Image -->
                                 <img class="responsive-img" src={{img}} alt="news image">
@@ -54,13 +63,13 @@
                                 </span>
                             </p>
                             <!-- Post Title -->
-                            <a href="#">
+                            <a href="/articles/{{_id}}">
                                 <h5>{{ title }}</h5>
                             </a>
                             <!-- Post Excerpt -->
                             <p class="p-b-1">{{ content }}</p>
                             <!-- Post Link -->
-                            <a href="#" class="shadow-button waves-effect waves-light">
+                            <a href="/articles/{{_id}}" class="shadow-button waves-effect waves-light">
                                 Read more
                                 <i class="fa fa-arrow-right"></i>
                             </a>
@@ -69,17 +78,8 @@
                     {{/each}}
                 </div>
             </div>
-            {{!--  --}}
-            <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-            </ul>
         </div>
     </div>
 </section>
 <!-- End News Section-->
+
