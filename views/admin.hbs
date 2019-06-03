@@ -7,7 +7,7 @@
         <div class="row">
 
             {{#each dbUsers }}
-            <div class="col s12 l4">
+            <div id="dash" class="col s12 l4">
                 <a href="/admin/edit/user/{{_id}}">
                     <div class="icon s6 p-tb-2">
                         <img class="fa fa-3x waves-circle" src="{{ imgUser }}">
@@ -34,26 +34,26 @@
         <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
         <div class="row">
 
-            {{#each dbBlogs }}
-            <div class="col s12 l4">
-                <a href="/admin/edit/article/{{_id}}">
-                    <div class="icon s6 p-tb-2">
-                        <img class="fa fa-3x waves-circle" src={{ img }}>
-                        {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
-                    </div>
-                    <h5 class="p-tb-1">{{ title }}</h5>
-                    <p> Author: {{ author }} </p>
-                    <p> Id: {{ _id }} </p>
-                    <p> Serie: {{ serie }} </p>
-                    <div id="dash">
-                    <p> Content: {{ content }} </p>
-                    </div>
+            {{#each dbArticles }}
+            <div id="dash" class="col s12 l4">
+                <a href="/admin/edit/article/{{ _id }}">
+                <div class="icon s6 p-tb-2">
+                    <img class="fa fa-3x waves-circle" src={{ img }}>
+                    {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
+                </div>
                 </a>
-                <a href="/admin/edit/{{ _id }}">
-                    <button class="btn"> Edit </button>
-                </a>
+                <h5 class="p-tb-1">{{ title }}</h5>
+                <p> Author: {{ author }} </p>
+                <p> Id: {{ _id }} </p>
+                <p> Serie: {{ serie }} </p>
+
+                <p> Content: {{ content }} </p>
             </div>
             {{/each }}
+        </div>
+        <div class="row">
+            <h4 class="reflection-text p-b-2">Écrire un Article </h4>
+
 
             <form id="formAddBlog" action="/admin/articlePost" method="POST" enctype="multipart/form-data">
                 <div class="row">
