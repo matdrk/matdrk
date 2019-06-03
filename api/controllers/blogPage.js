@@ -4,10 +4,14 @@ const express = require('express')
     , router  = express.Router()
     , path    = require('path')
     , fs      = require('fs') 
+    , article = require('../database/models/Article')
 
     module.exports = async (req, res, next) => {
+        const dbArticles = await article.find({})
 
-    res.render('blog')
+        console.log( {dbArticles} );
+        
+    res.render('blog', { dbArticles })
 
 }
 

@@ -9,8 +9,9 @@ const UserSchema = new mongoose.Schema ({
                      unique   : true },
     password     : { type : String,
                      required : [true, 'Le mot de passe est obligatoire'] },
-    premium      : { type  : false},
-    admin        : { type  : false},
+    status       : { type  : String},
+    bio          : { type  : String},
+    imgUser      : { type  : String},
     created_date : { type : Date, default: Date.now }
 })
 

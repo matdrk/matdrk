@@ -1,0 +1,118 @@
+<!-- Start About Section-->
+<section id="editUsers" class="main-section center-align" data-scroll-index="7">
+    <div class="container">
+        <div style="margin-top: 10vh">
+            <h2>Page Editer User</h2>
+        </div>
+
+        <h1> {{ editUser.name }} </h1>
+
+        <h1>Edit User</h1>
+
+        {{!-- Item with id --}}
+        <div style="margin-top: 10vh" class="column item-app filterDiv {{ editUser.authorBlog }}"
+            value={{ authorBlog }}>
+            <a href={{ editUser.linkBlog }} target="_blank">
+                <img class="ui medium circular image" src="{{ editUser.imageUser }}">
+                <a href="/blog/edit/{{editUser._id}}" {{!--id="MoEdBlog"--}}>
+                    <i class="edit icon"></i>
+                </a>
+                <button class="ui button secondary">
+                    {{ editUser.name }}
+                </button>
+                <a href="/blog/delete/{{editUser._id}}" {{!-id="MoDeBlog"--}}>
+                    <i class="close icon"></i>
+                </a>
+            </a>
+        </div>
+        {{!-- update item --}}
+        <form class="form" action="/admin/edit/userPost/{{editUser._id}}" method="POST" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div>
+                    <h4><label for=""><u>Name :</u> (10 Characters)</label></h4>
+                    <div class="ui left corner labeled input">
+                        <input type="text" maxlength="10" size="10" value="{{editUser.name}}" name="name"
+                            placeholder="{{ editUser.name }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4><label for=""><u>ID :</u></label></h4>
+                    <div class="ui left corner labeled input">
+                        <input type="text" name="_id" value="{{ editUser._id }}" placeholder="{{ editUser._id }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4><label for=""><u>E-mail :</u></label></h4>
+                    <div class="ui left corner labeled input">
+                        <input type="email" value="{{  editUser.email }}" name="email"
+                            placeholder="{{ editUser.email }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4><label for=""><u>Status :</u></label></h4>
+                    <div class="ui left corner labeled input">
+                        <input type="text" value="{{  editUser.status }}" name="status"
+                            placeholder="{{ editUser.status }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4><label for=""><u>Bio :</u></label></h4>
+                    <div class="ui left corner labeled input">
+                        <input type="text" value="{{  editUser.bio }}" name="bio"
+                            placeholder="{{ editUser.bio }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui">
+                    <h4><label for=""><u>Membre depuis :</u></label></h4>
+                    <div class="ui center corner labeled input">
+                        <input type="text" name="created_date" value="{{ editUser.created_date }}"
+                            placeholder="{{ editUser.created_date }}">
+                        <div class="ui left corner label">
+                            <i class="asterisk icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <h4><label for=""><u>Image Profile :</u></label></h4>
+                <div class="ui center corner labeled input">
+                    <input type="text" value="{{  editUser.imgUser }}" name="imgUser"
+                        placeholder="{{ editUser.imgUser }}">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+                <div class="ui right corner labeled input">
+                    <input type="file" name="imgUser" (change)="fileEvent($event)" class="inputfile"
+                        id="embedpollfileinput">
+                    <label for="embedpollfileinput" class="ui huge green right floated button">
+                        <i class="ui upload icon"></i>
+                        Upload image
+                    </label>
+                </div>
+                <div class="actions footer modal-footer">
+                    <div class="ui black deny button">
+                        Annuler
+                    </div>
+                    <button id="addIteBlog" type="submit" class="ui positive right labeled icon button is-link">
+                        Confirmer
+                        <i class="checkmark icon"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
