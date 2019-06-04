@@ -7,9 +7,10 @@ const express = require('express')
     , User    = require('../database/models/User')
     , article = require('../database/models/Article')
 
-    module.exports = async (req, res, next) => {
+module.exports = async (req, res, next) => {
         const dbUsers  = await User.find({})
         ,     dbArticles = await article.find({}) 
 
     res.render('test', { dbUsers, dbArticles })
+    console.log(dbArticles.serie);
 }

@@ -7,9 +7,83 @@
         <h4 class="reflection-text p-b-2">Dernière Actu</h4>
 
         <!-- Description -->
-        <p class="p-t-1 desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet corporis, cupiditate dolores ipsa ipsam maiores molestias nesciunt, nihil odio quae, quo ratione soluta.</p><br/>
+        <p class="p-t-1 desc">Ensemble des posts</p>
+
+        <div class="p-t-2 grid center-align owl-carousel owl-news">
+
+            {{#each dbArticles }}
+            <div class="single-news col s12 m6 l4">
+                <!-- Link to the blog news post -->
+                <a href="/articles/{{_id}}">
+                    <figure>
+                        <!-- Post Image -->
+                        <img class="responsive-img" src={{img}} alt="news image">
+                        <figcaption>
+                            <span class="overlay gradient-color"></span>
+                            <span class="stats">
+                                <span class="search">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                                <span class="icons">
+                                    <!--Post Views Count-->
+                                    <i class="fa fa-eye" aria-hidden="true"></i>123
+                                    <!--Post Comments Count-->
+                                    <i class="fa fa-comments" aria-hidden="true"></i>12
+                                </span>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </a>
+                <div class="info p-b-1">
+                    <p>
+                        <!-- Post Writer Name -->
+                        <span>
+                            <i class="fa fa-user gradient-color" aria-hidden="true"></i>
+                            {{author}}
+                        </span>
+                        <!-- Post Date -->
+                        <span>
+                            <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
+                            {{serie}}
+                        </span>
+                    </p>
+                    <!-- Post Title -->
+                    <a href="/articles/{{_id}}">
+                        <h5>{{ title }}</h5>
+                    </a>
+                    <!-- Post Excerpt -->
+                    <p class="p-b-1">{{ content }}</p>
+                    <!-- Post Link -->
+                    <a href="/articles/{{_id}}" class="shadow-button waves-effect waves-light">
+                        Read more
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+</section>
+<!-- End News Section-->
+
+<!-- Start News Section-->
+<section id="news" data-scroll-index="4" class="main-section center-align">
+
+    <div class="container">
+
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Dernière Actu</h4>
+
+        <!-- Description -->
+        <p class="p-t-1 desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci amet corporis,
+            cupiditate dolores ipsa ipsam maiores molestias nesciunt, nihil odio quae, quo ratione soluta.</p><br />
 
         <div id="myBtnContainer">
+            <!--Title-->
+            <a id="filter" class="item btn" onclick="filterSelection('all')">
+                <p>Tout </p>
+            </a>
             <!--Title-->
             <a id="filter" class="item btn" onclick="filterSelection('blog')">
                 <p>Blog </p>
@@ -23,63 +97,61 @@
         </div>
 
         <div class="p-t-2 grid center-align owl-carousel owl-news">
-
-                <div class="p-t-2 grid center-align row"></div>
-                    {{!--  --}}
-                    {{#each dbArticles }}
-                    <div class="single-news filterDiv {{ serie }}" value="{{ serie }}">
-                        <!-- Link to the blog news post -->
-                        <a href="/articles/{{_id}}">
-                            <figure>
-                                <!-- Post Image -->
-                                <img class="responsive-img" src={{img}} alt="news image">
-                                <figcaption>
-                                    <span class="overlay gradient-color"></span>
-                                    <span class="stats">
-                                        <span class="search">
-                                            <i class="fa fa-search"></i>
-                                        </span>
-                                        <span class="icons">
-                                            <!--Post Views Count-->
-                                            <i class="fa fa-eye" aria-hidden="true"></i>123
-                                            <!--Post Comments Count-->
-                                            <i class="fa fa-comments" aria-hidden="true"></i>12
-                                        </span>
-                                    </span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <div class="info p-b-1">
-                            <p>
-                                <!-- Post Writer Name -->
-                                <span>
-                                    <i class="fa fa-user gradient-color" aria-hidden="true"></i>
-                                    {{author}}
+            <div class="p-t-2 grid center-align row cont-app"></div>
+            {{!--  --}}
+            {{#each dbArticles }}
+            <div class="single-news filterDiv {{ serie }}" value="{{ serie }}">
+                <!-- Link to the blog news post -->
+                <a href="/articles/{{_id}}">
+                    <figure>
+                        <!-- Post Image -->
+                        <img class="responsive-img" src={{img}} alt="news image">
+                        <figcaption>
+                            <span class="overlay gradient-color"></span>
+                            <span class="stats">
+                                <span class="search">
+                                    <i class="fa fa-search"></i>
                                 </span>
-                                <!-- Post Date -->
-                                <span>
-                                    <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
-                                    {{serie}}
+                                <span class="icons">
+                                    <!--Post Views Count-->
+                                    <i class="fa fa-eye" aria-hidden="true"></i>123
+                                    <!--Post Comments Count-->
+                                    <i class="fa fa-comments" aria-hidden="true"></i>12
                                 </span>
-                            </p>
-                            <!-- Post Title -->
-                            <a href="/articles/{{_id}}">
-                                <h5>{{ title }}</h5>
-                            </a>
-                            <!-- Post Excerpt -->
-                            <p class="p-b-1">{{ content }}</p>
-                            <!-- Post Link -->
-                            <a href="/articles/{{_id}}" class="shadow-button waves-effect waves-light">
-                                Read more
-                                <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    {{/each}}
+                            </span>
+                        </figcaption>
+                    </figure>
+                </a>
+                <div class="info p-b-1">
+                    <p>
+                        <!-- Post Writer Name -->
+                        <span>
+                            <i class="fa fa-user gradient-color" aria-hidden="true"></i>
+                            {{author}}
+                        </span>
+                        <!-- Post Date -->
+                        <span>
+                            <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
+                            {{serie}}
+                        </span>
+                    </p>
+                    <!-- Post Title -->
+                    <a href="/articles/{{_id}}">
+                        <h5>{{ title }}</h5>
+                    </a>
+                    <!-- Post Excerpt -->
+                    <p class="p-b-1">{{ content }}</p>
+                    <!-- Post Link -->
+                    <a href="/articles/{{_id}}" class="shadow-button waves-effect waves-light">
+                        Read more
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
+            {{/each}}
         </div>
+    </div>
+    </div>
     </div>
 </section>
 <!-- End News Section-->
-
