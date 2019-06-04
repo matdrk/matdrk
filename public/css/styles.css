@@ -2101,9 +2101,9 @@ a:visited {
     position: relative
 }
 
-#news figure img {
+/* #news figure img {
     width: 100%
-}
+} */
 
 #news figure figcaption {
     position: absolute;
