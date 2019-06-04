@@ -1,22 +1,22 @@
 // Page My Apps
 const express = require('express')
-    , app     = express()
-    , router  = express.Router()
-    , path    = require('path')
-    , fs      = require('fs') 
-    , User    = require('../database/models/User')
+    , app = express()
+    , router = express.Router()
+    , path = require('path')
+    , fs = require('fs')
+    , User = require('../database/models/User')
     , article = require('../database/models/Article')
 
 
 router.get('/', async (req, res, next) => {
-    const dbUsers  = await User.find({})
-    ,     dbBlogs  = await article.find({})
-    ,     sess     = req.session;
+    const dbUsers = await User.find({})
+        , dbArticles = await article.find({})
+        , sess = req.session;
 
     if (req.session.status !== "admin") {
         res.redirect('/');
     } else {
-        res.render('admin', {dbUsers, sess, dbBlogs})
+        res.render('admin', { dbUsers, sess, dbArticles })
         console.log(sess.email)
     }
 })
@@ -24,9 +24,9 @@ router.get('/', async (req, res, next) => {
 router.get('/edit/user/:id', async (req, res, next) => {
     const editUser = await User.findById(req.params.id)
     if (req.session.userId) {
-        return res.render("editUser", {editUser})
+        return res.render("editUser", { editUser })
     }
-    res.render('editUser', {editUser})
+    res.render('editUser', { editUser })
 })
 
 router.post('/edit/userPost/:id', async (req, res, next) => {
@@ -51,7 +51,6 @@ router.post('/edit/userPost/:id', async (req, res, next) => {
             } else {
                 res.redirect('/admin');
             }
-            console.log(dbUsers);
         });
 })
 
@@ -69,10 +68,11 @@ router.get('/delete/:id', (req, res) => {
     res.redirect('/admin');
 });
 
-router.get('/edit/:id', async (req, res, next) => {
-    const postItemBlog = await article.findById(req.params.id)
+router.get('/edit/article/:id', async (req, res, next) => {
+    const dbArticles = await article.findById(req.params.id)
     if (req.session.userId) {
-        return res.render("editBlog", { postItemBlog })
+        console.log(dbArticles);
+        return res.render("editArticle", { dbArticles })
     }
     res.render('/user/login')
 })
@@ -93,27 +93,32 @@ router.post('/articlePost', async (req, res, next) => {
 })
 
 router.post('/edit/articlePost/:id', async (req, res, next) => {
+    const dbArticles = await article.findById(req.params.id);
     let query = { _id: req.params.id }
-    const { img } = req.files
-    const uploadFile = path.resolve(__dirname, '../..', 'public/images/artblog', img.name);
-    img.mv(uploadFile, (error) => {
-        article.findOneAndUpdate(
-            query, {
-                ...req.body,
-                img: `/images/artblog/${img.name}`
-            },
-            { useFindAndModify: false }
-            , function (error, post) {
-                if (error) {
-                    console.log(error);
-                    return;
-                    res.redirect('/');
-                } else {
-                    res.redirect('/blog');
-                }
-            });
-    })
-    console.log(req.body);
+    // const { img } = req.files
+    // const uploadFile = path.resolve(__dirname, '../..', 'public/images/artblog', img.name);
+
+
+
+    article.findOneAndUpdate(
+        query, {
+            ...req.body
+        },
+        { useFindAndModify: false },
+        function (error, post) {
+            if (error) {
+                console.log(error);
+                article.create({
+                    ...req.body
+                },
+                    (error, post) => {
+                        res.redirect('/admin')
+                    })
+
+            } else {
+                res.redirect('/admin');
+            }
+        });
 })
 
 
