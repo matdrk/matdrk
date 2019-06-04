@@ -20,7 +20,7 @@
                 </div>
 
                 <!-- App Main Description -->
-                <p class="description">Developpeur Web Plus que Junior, je suis à votre disposition pour répondre à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.</p>
+                <p class="description">Developpeur Web Plus que Junior</p>
 
                 <!-- App Slogan -->
                 <a href="/about" class="slogan z-depth-1 hoverable waves-effect waves-light">En Savoir plus</a>
@@ -31,9 +31,12 @@
         <div class="owl-carousel owl-header">
 
             <!-- Mobiles Image-->
+            {{#unless user}}
             <img class="responsive-img" src="images/iphone-mock/blue/1-4.gif" alt="">
+            {{/unless}}
+            {{#if user}}
             <img class="responsive-img" src="images/iphone-mock/blue/1-2.gif" alt="">
-
+            {{/if}}
         </div>
     </div>
 
