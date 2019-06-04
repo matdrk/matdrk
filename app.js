@@ -20,16 +20,14 @@ const http = require('http');
 const server = http.Server(app);
 
 //___________________________ DB
-// 'mongodb://localhost:27017/portfolio'
-const db = "mongodb+srv://matdrk:matdrk$@drkapps-aivv5.mongodb.net/test?retryWrites=true&w=majority"
-mongoose
-       // .connect(db , { useNewUrlParser: true })
-       .connect( db, {
-           useCreateIndex: true,
-           useNewUrlParser: true
-         })
-       .then(()    => console.log('Connecter a MongoDB Cloud'))
-       .catch(err  => console.log(err));
+mongoose 
+        // .connect(db , { useNewUrlParser: true })
+        .connect('mongodb://localhost:27017/portfolio', {
+            useCreateIndex: true,
+            useNewUrlParser: true
+          })
+        .then(()    => console.log('Connecter a MongoDB Cloud'))
+        .catch(err  => console.log(err));
 
 // connect-flash
 app.use(connectFlash())
