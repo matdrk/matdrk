@@ -76,7 +76,7 @@ router.post('/loginAuth', async (req, res, next) => {
                         if (same) {
                             req.session.userId = User._id;
                             console.log('admin OK');
-                            res.redirect('/admin')
+                            res.redirect('/')
                         } else {
                             console.log('admin Fail');
                             res.redirect('/login')
