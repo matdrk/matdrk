@@ -2550,7 +2550,6 @@ a:visited {
 
 #faq .collapsible-header::after {
     content: "\f067";
-    font-family: 'FontAwesome';
     position: absolute;
     right: 1rem
 }
