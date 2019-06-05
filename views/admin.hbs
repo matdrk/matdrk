@@ -1,117 +1,3 @@
-<section id="user" class="main-section center-align">
-    <div class="container">
-        <!--Title-->
-        <h4 class="reflection-text p-b-2">Users</h4>
-        <!-- Description -->
-        <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
-        <div class="row">
-
-            {{#each dbUsers }}
-            <div id="dash" class="col s12 l4">
-                <a href="/admin/edit/user/{{_id}}">
-                    <div class="icon s6 p-tb-2">
-                        <img class="fa fa-3x waves-circle" src="{{ imgUser }}">
-                        {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
-                    </div>
-                    <h5 class="p-tb-1">{{ name }}</h5>
-                    <p> Mail: {{ email }} </p>
-                    <p> Id: {{ _id }} </p>
-                    <p> Status: {{ status }} </p>
-                    <p> Bio: {{ bio }} </p>
-                </a>
-            </div>
-            {{/each }}
-
-        </div>
-    </div>
-</section>
-
-<section id="blog" class="main-section center-align" data-scroll-index="7">
-    <div class="container">
-        <!--Title-->
-        <h4 class="reflection-text p-b-2">Blog & Services </h4>
-        <!-- Description -->
-        <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
-        <div class="row">
-
-            {{#each dbArticles }}
-            <div id="dash" class="col s12 l4">
-                <a href="/admin/edit/article/{{ _id }}">
-                <div class="icon s6 p-tb-2">
-                    <img class="fa fa-3x waves-circle" src={{ img }}>
-                    {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
-                </div>
-                </a>
-                <h5 class="p-tb-1">{{ title }}</h5>
-                <p> Author: {{ author }} </p>
-                <p> Id: {{ _id }} </p>
-                <p> Serie: {{ serie }} </p>
-
-                <p> Content: {{ content }} </p>
-            </div>
-            {{/each }}
-        </div>
-        <div class="row">
-            <h4 class="reflection-text p-b-2">Écrire un Article </h4>
-
-
-            <form id="formAddBlog" action="/admin/articlePost" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <h4><label for=""><u>Titre :</u> (1 word)</label></h4>
-                    <input type="text" name="title" placeholder="Titre">
-                    <div class="ui left corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-
-                    <h4><label for=""><u>Image :</u></label></h4>
-                    <input type="file" name="img" (change)="fileEvent($event)" class="inputfile"
-                        id="embedpollfileinput">
-                    <label for="embedpollfileinput" class="ui huge green right floated button">
-                        <i class="ui upload icon"></i>
-                        Upload image
-                    </label>
-                    <h4><label for=""><u>Lien Image :</u></label></h4>
-                    <input type="text" name="img" placeholder="link image">
-                    <div class="ui left corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-                    <h4><label for=""><u>Author :</u> (1 word)</label></h4>
-                    <input type="text" name="author" placeholder="Author">
-                    <div class="ui left corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-                    <h4><label for=""><u>Serie :</u> (1 word)</label></h4>
-                    <input type="text" name="serie" placeholder="blog ou service">
-                    <div class="ui left corner label">
-                        <i class="asterisk icon"></i>
-                    </div>
-                </div>
-        </div>
-        <div>
-            <h4><label for=""><u>Contenu :</u></label></h4>
-            <div class="control">
-                <textarea id="editorBlog" class="textarea" placeholder="Textarea" name="content">
-                </textarea>
-            </div>
-        </div>
-        <div class="actions footer modal-footer">
-            <div class="ui black deny button">
-                Annuler
-            </div>
-            <button id="addItemApp" type="submit" class="ui positive right labeled icon button is-link">
-                Confirmer
-                <i class="checkmark icon"></i>
-            </button>
-        </div>
-        </form>
-
-    </div>
-    </div>
-</section>
-
-
-
-
 <!-- Start Team Section-->
 <section id="team" class="main-section center-align">
 
@@ -129,12 +15,14 @@
             <!-- Single Team Container -->
             {{#each dbUsers }}
             <div class="team-member m-tb-2 z-depth-2 hoverable">
+                <a href="/admin/edit/user/{{_id}}">
                 <figure>
 
                     <!-- Team Image -->
                     <img class="responsive-img" src="{{ imgUser }}" alt="news image" style="height: 318px">
 
                 </figure>
+                </a>
 
                 <div class="name p-b-1">
 
@@ -158,10 +46,115 @@
 </section>
 <!-- End Team Section-->
 
+<!-- Start News Section-->
+<section id="news" data-scroll-index="4" class="main-section center-align">
+
+    <div class="container">
+
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Blog & Services </h4>
+        <!-- Description -->
+        <p class="p-t-1 desc">Connecté en tant que : <u><b> {{ sess.name }} </b></u></p>
+
+        <div class="row">
+
+            <div class="col s12">
+
+                <div class="p-t-2 grid center-align row">
+
+                    {{#each dbArticles }}
+
+                    <div class="single-news col s12 m6 l4">
+
+                        <!-- Link to the blog news post -->
+                        <a href="#">
+
+                            <figure>
+
+                                <!-- Post Image -->
+                                <img class="responsive-img" src="{{ img }}" alt="news image" style="height: 318px">
+
+                                <figcaption>
+
+                                    <span class="overlay gradient-color"></span>
+
+                                    <span class="stats">
+
+                                <span class="search">
+                                    <i class="fa fa-search"></i>
+                                </span>
+
+                                <span class="icons">
+                                    <!--Post Views Count-->
+                                    <i class="fa fa-eye" aria-hidden="true"></i>123
+                                    <!--Post Comments Count-->
+                                    <i class="fa fa-comments" aria-hidden="true"></i>12
+                                </span>
+
+                            </span>
+
+                                </figcaption>
+
+                            </figure>
+
+                        </a>
+
+
+                        <div class="info p-b-1">
+
+                            <p>
+
+                                <!-- Post Writer Name -->
+                                <span>
+                            <i class="fa fa-user gradient-color" aria-hidden="true"></i>
+                            {{ author }}
+                        </span>
+
+                                <!-- Post Date -->
+                                <span>
+                            <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
+                            24 Oct. 1988
+                        </span>
+
+                            </p>
+
+                            <!-- Post Title -->
+                            <a href="#">
+                                <h5>{{ title }}</h5>
+                            </a>
+
+                            <!-- Post Excerpt -->
+                            <p class="p-b-1">{{ _id }}</p>
+                            <p class="p-b-1">{{ serie }}</p>
+
+                            <!-- Post Link -->
+                            <a href="#" class="shadow-button waves-effect waves-light">
+                                Read more
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {{/each }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- End News Section-->
+     
+
 <!-- Start article creation Section-->
 
 
-    <div id="footer" class="center-align gradient-color">
+    <div class="center-align">
 
         <div class="main-section">
 
@@ -170,11 +163,11 @@
                 <!--Title-->
                 <h4 class="reflection-text p-b-2">Ajout d'article</h4>
 
-                <div class="contact-container">
+                <div class="container">
 
                     <!-- Contact Form -->
                     <form id="formAddBlog" action="/admin/articlePost" method="POST" enctype="multipart/form-data">
-                <div class="row">
+               
                     <h4><label for=""><u>Titre :</u> (1 word)</label></h4>
                     <input type="text" name="title" placeholder="Titre">
                     <div class="ui left corner label">
@@ -184,7 +177,7 @@
                     <h4><label for=""><u>Image :</u></label></h4>
                     <input type="file" name="img" (change)="fileEvent($event)" class="inputfile"
                         id="embedpollfileinput">
-                    <label for="embedpollfileinput" class="ui huge green right floated button">
+                    <label for="embedpollfileinput" class="ui huge button">
                         <i class="ui upload icon"></i>
                         Upload image
                     </label>
@@ -203,80 +196,19 @@
                     <div class="ui left corner label">
                         <i class="asterisk icon"></i>
                     </div>
-                </div>
-        </div>
-        <div>
-            <h4><label for=""><u>Contenu :</u></label></h4>
+                    <h4><label for=""><u>Contenu :</u></label></h4>
             <div class="control">
-                <textarea id="editorBlog" class="textarea" placeholder="Textarea" name="content">
+                <textarea id="mytextarea" name="content">
                 </textarea>
             </div>
+                
         </div>
+    
         <div class="actions footer modal-footer">
-            <div class="ui black deny button">
-                Annuler
-            </div>
-            <button id="addItemApp" type="submit" class="ui positive right labeled icon button is-link">
-                Confirmer
-                <i class="checkmark icon"></i>
+            <button id="submit" class="gradient-color waves-effect waves-light buttonArt" type="submit">Envoyer</button>
             </button>
         </div>
         </form>
-
-
-
-
-                    <form id="contact-form" method="POST" enctype="multipart/form-data" action="/admin/articlePost" >
-
-                        <div class="row">
-
-                            <!-- Name Field -->
-                            <div class="input-field col s12">
-
-                                <i class="fa fa-user-o prefix" aria-hidden="true"></i>
-                                <input id="contact-name" type="text" class="validate" name="first_name" required>
-                                <label for="contact-name">Titre*</label>
-
-                            </div>
-
-                            <!-- Email Field -->
-                            <div class="input-field col s12 m-t-1">
-
-                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
-                                <input id="contact-email" type="email" class="validate" name="email" required>
-                                <label data-error="Invalid Email"  for="contact-email">Email*</label>
-
-                            </div>
-
-                            <!-- Message Field -->
-                            <div class="input-field col s12 m-t-1">
-
-                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
-                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
-                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Message*</label>
-
-                            </div>
-
-                            <!-- Form Alert Message -->
-                            <div class="col s12 alert-message" id="contact-alert-message"></div>
-
-                            <!-- Submit Button -->
-                            <div class="col s12">
-
-                                <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Envoyer</button>
-
-                            </div>
-
-                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
-                            <div class="input-field col s12 hidden">
-
-                                <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
-
-                            </div>
-
-                        </div>
-
-                    </form>
 
                 </div>
 
@@ -287,3 +219,7 @@
     </div>
 
 {{!-- End article creation section --}}
+
+
+
+

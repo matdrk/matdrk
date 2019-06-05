@@ -6384,7 +6384,6 @@ textarea.materialize-textarea+label:after,
 
 .input-field {
     position: relative;
-    margin-top: 1rem
 }
 
 .input-field.inline {
@@ -6398,9 +6397,7 @@ textarea.materialize-textarea+label:after,
     margin-bottom: 1rem
 }
 
-.input-field.col label {
-    left: .75rem
-}
+
 
 .input-field.col .prefix~label,
 .input-field.col .prefix~.validate~label {

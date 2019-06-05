@@ -2633,7 +2633,7 @@ a:visited {
 }
 
 #footer form input {
-    padding-top: 1rem
+    padding-top: 2rem
 }
 
 #footer .prefix {
@@ -2654,6 +2654,21 @@ a:visited {
 }
 
 #footer button {
+    width: 80%;
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 15px 0 rgba(0, 0, 0, 0.08)
+}
+
+.buttonArt {
     width: 80%;
     padding: 0.5rem 0;
     font-size: 1.4rem;
