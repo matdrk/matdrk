@@ -1,156 +1,118 @@
 <!-- Start News Section-->
 <section id="news" data-scroll-index="4" class="main-section center-align">
-
     <div class="container">
-
         <div class="row">
-
             <div class="col s12">
-
                 <div class="p-t-2 grid center-align row">
-
                     <div class="col center-align aos-init aos-animate">
-
-                            <figure>
-
-                                <!-- Post Image -->
-                                <img class="responsive-img" src="{{dbArticles.img}}" alt="news image">
-
-                            </figure>
-
+                        <h1> {{ dbArticles.title }} </h1>
+                        <figure>
+                            <!-- Post Image -->
+                            <img class="responsive-img" src="{{dbArticles.img}}" alt="news image">
+                        </figure>
                         <div class="info p-b-1">
-
                             <p>
-
-                            <!-- Post Writer Name -->
-                            <span>
-                                <i class="fa fa-user gradient-color" aria-hidden="true"></i>John Doe
-                            </span>
-
-                            <!-- Post Date -->
-                            <span>
-                                <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>24 Oct. 1988
-                            </span>
-
-                            <!--Post Views Count-->
-                            <span>
-                                <i class="fa fa-eye gradient-color" aria-hidden="true"></i>123
-                            </span>
-
-                            <!--Post Comments Count-->
-                            <span>
-                                <i class="fa fa-comments gradient-color" aria-hidden="true"></i>21
-                            </span>
-
+                                <!-- Post Writer Name -->
+                                <span>
+                                    <i class="fa fa-user gradient-color" aria-hidden="true"></i> {{ dbArticles.author }}
+                                </span>
+                                <!-- Post Date -->
+                                <span>
+                                    <i class="fa fa-calendar gradient-color" aria-hidden="true"></i> {{ dbArticles.createDate }}
+                                </span>
+                                <!--Post Views Count-->
+                                <span>
+                                    <i class="fa fa-eye gradient-color" aria-hidden="true"></i>123
+                                </span>
+                                <!--Post Comments Count-->
+                                <span>
+                                    <i class="fa fa-comments gradient-color" aria-hidden="true"></i>21
+                                </span>
                             </p>
-
                             <!-- Post Content -->
                             <div class="content">
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi exercitationem harum laudantium maiores Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic mollitia non quis quos soluta? Error excepturi laborum optio sed velit?</p>
-
-                                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisi  dolor sit amet, consectetur adipisi  dolor sit amet, consectetur adipisicing elit. Culpa ea laudantium natus nesciunt nihil. Consequuntur culpa distinctio exercitationem illum impedit, magni mollitia nisi nobis non nulla, officiis quasi qui, voluptates Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab accusamus adipisci aliquid animi aspernatur assumenda at autem delectus, earum eius facilis illum labore magnam magni modi molestiae nam obcaecati quae ratione rerum sapiente sed tempore vero vitae voluptatibus voluptatum?.</blockquote>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem deserunt doloribus et explicabo facere modi mollitia necessitatibus nihil, nisi nobis nulla obcaecati pariatur perspiciatis possimus quidem, quisquam quo recusandae sapiente similique tempore tenetur ullam, vel veniam voluptas? At cumque ducimus explicabo officia ratione. A accusantium, architecto culpa dignissimos, distinctio fugiat fugit molestiae nemo quae quis quo reprehenderit repudiandae sapiente sequi sit tempore vel? Hic iste laboriosam maiores quae quo quos ratione? Architecto aspernatur debitis dolor eveniet facilis incidunt minima modi necessitatibus neque non nulla praesentium, provident qui repudiandae suscipit tempora tenetur ullam voluptates! Doloremque facere iure nemo perspiciatis quia!</p>
-
-                                <h4 class="p-tb-1">Lorem ipsum dolor sit amet,  elit.</h4>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur culpa debitis delectus enim, excepturi fuga fugiat impedit molestiae nam neque obcaecati qui. Ex explicabo fugiat, molestiae nisi quas rem soluta voluptatum. Dignissimos ipsum odit tenetur? Ad amet culpa dolor, enim ex laboriosam laborum, neque optio similique, suscipit temporibus voluptatibus?</p>
-
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi exercitationem
+                                    harum laudantium maiores Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Hic mollitia non quis quos soluta? Error excepturi laborum optio sed velit?</p>
+                                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisi dolor sit amet, consectetur
+                                    adipisi dolor sit amet, consectetur adipisicing elit. Culpa ea laudantium natus
+                                    nesciunt nihil. Consequuntur culpa distinctio exercitationem illum impedit, magni
+                                    mollitia nisi nobis non nulla, officiis quasi qui, voluptates Lorem ipsum dolor sit
+                                    amet, consectetur adipisicing elit. A, ab accusamus adipisci aliquid animi
+                                    aspernatur assumenda at autem delectus, earum eius facilis illum labore magnam magni
+                                    modi molestiae nam obcaecati quae ratione rerum sapiente sed tempore vero vitae
+                                    voluptatibus voluptatum?.</blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem deserunt
+                                    doloribus et explicabo facere modi mollitia necessitatibus nihil, nisi nobis nulla
+                                    obcaecati pariatur perspiciatis possimus quidem, quisquam quo recusandae sapiente
+                                    similique tempore tenetur ullam, vel veniam voluptas? At cumque ducimus explicabo
+                                    officia ratione. A accusantium, architecto culpa dignissimos, distinctio fugiat
+                                    fugit molestiae nemo quae quis quo reprehenderit repudiandae sapiente sequi sit
+                                    tempore vel? Hic iste laboriosam maiores quae quo quos ratione? Architecto
+                                    aspernatur debitis dolor eveniet facilis incidunt minima modi necessitatibus neque
+                                    non nulla praesentium, provident qui repudiandae suscipit tempora tenetur ullam
+                                    voluptates! Doloremque facere iure nemo perspiciatis quia!</p>
+                                <h4 class="p-tb-1">Lorem ipsum dolor sit amet, elit.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur
+                                    culpa debitis delectus enim, excepturi fuga fugiat impedit molestiae nam neque
+                                    obcaecati qui. Ex explicabo fugiat, molestiae nisi quas rem soluta voluptatum.
+                                    Dignissimos ipsum odit tenetur? Ad amet culpa dolor, enim ex laboriosam laborum,
+                                    neque optio similique, suscipit temporibus voluptatibus?</p>
                             </div>
-
                         </div>
-
                         <hr>
-
                         <!--Post Comments-->
                         <div class="comments p-t-2">
-
-                            <h4> <i class="fa btn btn-floating btn-large gradient-color fa-comment-o waves-effect waves-light"></i> Comments</h4>
-
+                            <h4> {{!-- <i class="fa btn btn-floating btn-large gradient-color fa-comment-o waves-effect waves-light"></i> --}}
+                            Comments</h4>
                             <ul class="collection m-tb-2 left-align">
-
-                                <li class="collection-item avatar">
-
-                                    <img src="images/team/team1.jpg" alt="" class="circle admin">
-
-                                    <span class="title">John Doe <span class="badge red white-text">admin</span> </span>
-
-                                    <p><span class="comment-info"><i class="fa fa-calendar-check-o"></i> &nbsp; 23 Days Ago</span></p>
-
-                                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, doloribus!</p>
-
-                                    <a class="" href="#">Reply</a>
-
-                                </li>
-
-                                <li class="collection-item avatar reply">
-
-                                    <img src="images/team/team2-2.jpg" class="circle" alt="">
-
-                                    <span class="title">Sandra Minnie </span>
-
-                                    <p><span class="comment-info"><i class="fa fa-calendar-check-o"></i> &nbsp; 23 Days Ago</span></p>
-
-                                    <p>Lorem ipsum dolor sit amet  dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, exercitationem! si ips.</p>
-
-                                    <a class="" href="#">Reply</a>
-
-                                </li>
-
-                                <li class="collection-item avatar">
-
-                                    <img src="images/team/team3.jpg" class="circle" alt="">
-
-                                    <span class="title">John Snow </span>
-
-                                    <p><span class="comment-info"><i class="fa fa-calendar-check-o"></i> &nbsp; 23 Days Ago</span></p>
-
-                                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-
-                                    <a class="" href="#">Reply</a>
-
-                                </li>
-
-                                <li class="collection-item avatar">
-
-                                    <img src="images/team/team2.jpg" class="circle" alt="">
-
-                                    <span class="title">Sansa Stark </span>
-
-                                    <p><span class="comment-info"><i class="fa fa-calendar-check-o"></i> &nbsp; 23 Days Ago</span></p>
-
-                                    <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, modi nemo placeat quaerat quibusdam quidem. Ad dolore hic natus rem. amet.</p>
-
-                                    <a class="" href="#">Reply</a>
-
-                                </li>
-
+                                <!--Post Comments-->
+                                <div class="comments p-t-2">
+                                    <ul class="collection m-tb-2 left-align">
+                                        {{#each dbComment}}
+                                        <li class="collection-item avatar">
+                                            <img src="{{ dbUser.imgUser }}" alt="" class="circle admin">
+                                            <span class="title">{{ author }}
+                                            </span>
+                                            <p><span class="comment-info"><i
+                                                        class="fa fa-calendar-check-o"></i>{{ createDate }}</span></p>
+                                            <p> {{content}} </p>
+                                        </li>
+                                        {{/each }}
+                                    </ul>
+                                </div>
                             </ul>
-
                         </div>
-
                         <hr>
 
+                        {{#if user }}
                         <!--Post Comment Form-->
                         <div class="comment-form p-t-2">
-
-                            <div class="control">
-                <textarea id="mytextarea" name="content">
-                </textarea>
-            </div>
-
+                            <form action="/articles/comment" method="POST" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label></label>
+                                        <input type="text" name="ref" value="{{ dbArticles._id }}" required>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <label></label>
+                                        <input type="text" name="author" value="{{ sess.name }}" required>
+                                    </div>
+                                    <div>
+                                        <h4><label for=""><u>Contenu :</u></label></h4>
+                                        <div class="control">
+                                            <textarea id="mytextarea" name="content"></textarea>
+                                        </div>
+                                    </div>
+                                    <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
+                                </div>
+                            </form>
                         </div>
-
+                        {{/if }}
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 <!-- End News Section-->
