@@ -1,4 +1,4 @@
-<section id="user" class="main-section center-align" data-scroll-index="7">
+<section id="user" class="main-section center-align">
     <div class="container">
         <!--Title-->
         <h4 class="reflection-text p-b-2">Users</h4>
@@ -108,3 +108,182 @@
     </div>
     </div>
 </section>
+
+
+
+
+<!-- Start Team Section-->
+<section id="team" class="main-section center-align">
+
+    <div class="container">
+
+        <!--Title-->
+        <h4 class="reflection-text p-b-2">Utilisateurs</h4>
+
+        <!-- Description -->
+        <p class="p-t-1 desc">Liste des utilisateurs et admin de la db</p>
+
+        <!-- Owl Team Slider -->
+        <div class="p-t-2 grid center-align owl-carousel owl-teams">
+
+            <!-- Single Team Container -->
+            {{#each dbUsers }}
+            <div class="team-member m-tb-2 z-depth-2 hoverable">
+                <figure>
+
+                    <!-- Team Image -->
+                    <img class="responsive-img" src="{{ imgUser }}" alt="news image" style="height: 318px">
+
+                </figure>
+
+                <div class="name p-b-1">
+
+                    <!-- Team Member Name and link to his page -->
+                    <a href="#">
+                        <h5 class="team-name gradient-color waves-effect waves-light">{{ name }}</h5>
+                    </a>
+
+                    <!-- Team Member Job -->
+                    <h6>Mail: {{ email }}</h6>
+                    <h6>Id: {{ _id }}</h6>
+                    <h6>Status: {{ status }}</h6>
+
+                </div>
+            </div>
+            {{/each }}
+        </div>
+
+    </div>
+
+</section>
+<!-- End Team Section-->
+
+<!-- Start article creation Section-->
+
+
+    <div id="footer" class="center-align gradient-color">
+
+        <div class="main-section">
+
+            <div class="container">
+
+                <!--Title-->
+                <h4 class="reflection-text p-b-2">Ajout d'article</h4>
+
+                <div class="contact-container">
+
+                    <!-- Contact Form -->
+                    <form id="formAddBlog" action="/admin/articlePost" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <h4><label for=""><u>Titre :</u> (1 word)</label></h4>
+                    <input type="text" name="title" placeholder="Titre">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+
+                    <h4><label for=""><u>Image :</u></label></h4>
+                    <input type="file" name="img" (change)="fileEvent($event)" class="inputfile"
+                        id="embedpollfileinput">
+                    <label for="embedpollfileinput" class="ui huge green right floated button">
+                        <i class="ui upload icon"></i>
+                        Upload image
+                    </label>
+                    <h4><label for=""><u>Lien Image :</u></label></h4>
+                    <input type="text" name="img" placeholder="link image">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                    <h4><label for=""><u>Author :</u> (1 word)</label></h4>
+                    <input type="text" name="author" placeholder="Author">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                    <h4><label for=""><u>Serie :</u> (1 word)</label></h4>
+                    <input type="text" name="serie" placeholder="blog ou service">
+                    <div class="ui left corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+        </div>
+        <div>
+            <h4><label for=""><u>Contenu :</u></label></h4>
+            <div class="control">
+                <textarea id="editorBlog" class="textarea" placeholder="Textarea" name="content">
+                </textarea>
+            </div>
+        </div>
+        <div class="actions footer modal-footer">
+            <div class="ui black deny button">
+                Annuler
+            </div>
+            <button id="addItemApp" type="submit" class="ui positive right labeled icon button is-link">
+                Confirmer
+                <i class="checkmark icon"></i>
+            </button>
+        </div>
+        </form>
+
+
+
+
+                    <form id="contact-form" method="POST" enctype="multipart/form-data" action="/admin/articlePost" >
+
+                        <div class="row">
+
+                            <!-- Name Field -->
+                            <div class="input-field col s12">
+
+                                <i class="fa fa-user-o prefix" aria-hidden="true"></i>
+                                <input id="contact-name" type="text" class="validate" name="first_name" required>
+                                <label for="contact-name">Titre*</label>
+
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-paper-plane-o prefix" aria-hidden="true"></i>
+                                <input id="contact-email" type="email" class="validate" name="email" required>
+                                <label data-error="Invalid Email"  for="contact-email">Email*</label>
+
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="input-field col s12 m-t-1">
+
+                                <i class="fa fa-envelope-o prefix" aria-hidden="true"></i>
+                                <textarea id="contact-message" class="materialize-textarea validate" minlength="20" name="message" required></textarea>
+                                <label for="contact-message" data-error="Minimum Length is 20 Characters" >Message*</label>
+
+                            </div>
+
+                            <!-- Form Alert Message -->
+                            <div class="col s12 alert-message" id="contact-alert-message"></div>
+
+                            <!-- Submit Button -->
+                            <div class="col s12">
+
+                                <button id="contact-submit" class="gradient-color waves-effect waves-light" type="submit">Envoyer</button>
+
+                            </div>
+
+                            <!-- ! Anti-spam field ! Invisible for users, it will trick most bots to fill it and prevent the email from being sent to you -->
+                            <div class="input-field col s12 hidden">
+
+                                <input type="text" id="contact-check-spam" placeholder="Leave field empty" name="check-spam">
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{{!-- End article creation section --}}
