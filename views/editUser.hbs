@@ -54,17 +54,17 @@
                     <div class="row">
                         <div class="ui stacked segment">
                         <div class="input-field col s12 m-t-1">
-                            <a href="/admin/edit/user/{{_id}}">
+                     
                                 <div class="icon s6 p-tb-2">
                                     <img class="fa fa-3x waves-circle" src="{{ editUser.imgUser }}">
                                     {{!-- <i class="gradient-color fa fa-snowflake-o fa-3x waves-circle waves-effect waves-light"></i> --}}
                                 </div>
                                 <h5 class="p-tb-1">{{ editUser.name }}</h5>
-                                <p> Mail:</br> {{ editUser.email }} </p>
-                                <p> Id:</br> {{ editUser._id }} </p>
-                                <p> Status:</br> {{ editUser.status }} </p>
-                                <p> Bio:</br> {{ editUser.bio }} </p>
-                            </a>
+                                <p> Mail: {{ editUser.email }} </p>
+                                <p> Id: {{ editUser._id }} </p>
+                                <p> Status: {{ editUser.status }} </p>
+                                <p> Bio: {{ editUser.bio }} </p>
+                           
                             <button class="gradient-color waves-effect waves-light" type="submit">Del</button>
                         </div>
                     </div>
