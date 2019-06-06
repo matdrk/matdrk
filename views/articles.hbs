@@ -1,5 +1,5 @@
 <!-- Start News Section-->
-<section id="news" data-scroll-index="4" class="main-section center-align">
+<section id="news" class="main-section center-align ">
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -97,11 +97,11 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <label></label>
-                                        <input type="text" name="ref" value="{{ dbArticles._id }}" required>
+                                        <input type="hidden" name="ref" value="{{ dbArticles._id }}" required>
                                     </div>
                                     <div class="input-field col s12">
                                         <label></label>
-                                        <input type="text" name="author" value="{{ sess.name }}" required>
+                                        <input type="hidden" name="author" value="{{ sess.name }}" required>
                                     </div>
                                     <div>
                                         <h4><label for=""><u>Contenu :</u></label></h4>
@@ -109,7 +109,7 @@
                                             <textarea id="mytextarea" name="content"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col s12">
+                                    <div id="footer" class="col s12">
                                         <button class="gradient-color waves-effect waves-light"
                                             type="submit">Submit</button>
                                     </div>
