@@ -30,6 +30,7 @@ router.post('/comment', async (req, res, next) => {
             ...req.body,
             author: sess.name,
             authorId:  sess.userId,
+            imgAuthor: sess.imgUser,
             formatDate: (dateFormat(date, "dd mm yyyy à HH:MM:ss"))
         }, (err, comment) => {
             if (req.session.status !== User) {

@@ -18,7 +18,8 @@
                                 </span>
                                 <!-- Post Date -->
                                 <span>
-                                    <i class="fa fa-calendar gradient-color" aria-hidden="true"></i> {{ dbArticles.createDate }}
+                                    <i class="fa fa-calendar gradient-color" aria-hidden="true"></i>
+                                    {{ dbArticles.createDate }}
                                 </span>
                                 <!--Post Views Count-->
                                 <span>
@@ -64,6 +65,10 @@
                         <!--Post Comments-->
                         <div class="comments p-t-2">
 
+                            <h4> <i
+                                    class="fa btn btn-floating btn-large gradient-color fa-comment-o waves-effect waves-light"></i>
+                                Comments</h4>
+
                             <ul class="collection m-tb-2 left-align">
 
                                 <!--Post Comments-->
@@ -98,14 +103,6 @@
                                         <label></label>
                                         <input type="text" name="author" value="{{ sess.name }}" required>
                                     </div>
-                                    <div class="input-field col s12">
-                                        <label></label>
-                                        <input type="text" name="authorId" value="{{ sess.userId }}" required>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <label></label>
-                                        <input type="text" name="imgAuthor" value="{{ sess.imgUser }}" required>
-                                    </div>
                                     <div>
                                         <h4><label for=""><u>Contenu :</u></label></h4>
                                         <div class="control">
@@ -113,7 +110,8 @@
                                         </div>
                                     </div>
                                     <div class="col s12">
-                                    <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
+                                        <button class="gradient-color waves-effect waves-light"
+                                            type="submit">Submit</button>
                                     </div>
                                 </div>
                             </form>
