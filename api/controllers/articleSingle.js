@@ -4,8 +4,8 @@ module.exports = async (req, res) => {
 
     const dbArticles = await post.findById(req.params.id)
 
-        console.log( {dbArticles} );
-        console.log( req.params );
+        // console.log( {dbArticles} );
+        // console.log( req.params );
         
     res.render('articles', { dbArticles })
 
