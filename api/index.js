@@ -13,6 +13,7 @@ const router  = express.Router()
     , adminPage = require('./controllers/adminPage')
     , aboutPage = require('./controllers/aboutPage')
     , user      = require('./controllers/user')
+    , uml       = require('./controllers/uml')
     , logout    = require('./controllers/logout')
 
     , testPage = require('./controllers/testPage')
@@ -34,7 +35,7 @@ router.get('/logout' , logout)
 
 router.use('/admin' , adminPage)
 router.get('/cv'   , cvPage)
-
+router.get('/uml'   , uml)
 router.get('/test', testPage)
 
 module.exports = router;
