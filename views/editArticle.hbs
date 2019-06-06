@@ -6,7 +6,7 @@
             <h4 class="reflection-text p-b-2">Éditer Article</h4>
             <div class="contact-container">
 
-                <form class="ui form" action="/admin/edit/articlePost/{{dbArticles._id}}" method="POST"
+                <form action="/admin/edit/articlePost/{{dbArticles._id}}" method="POST"
                     enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s12">
@@ -39,12 +39,11 @@
                         {{!-- <div class="field">
                     <input type="text" placeholder="Confirmation Mot de passe">
                 </div> --}}
-                        <div>
+                        <div >
                             <h4><label for=""><u>Contenu :</u></label></h4>
-                            <div class="control">
-                                <textarea id="editorBlog" value="{{ dbArticles.content }}" class="textarea"
-                                    placeholder="Textarea" name="content"></textarea>
-                            </div>
+                        
+                                    <textarea value="{{ dbArticles.content }}"  name="content"></textarea>
+                      
                         </div>
                         <button class="gradient-color waves-effect waves-light" type="submit">Submit</button>
                     </div>
