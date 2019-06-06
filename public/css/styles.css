@@ -3894,7 +3894,7 @@ a:visited {
             filter: blur(3px);
   }
   
-  .btn {
+  .btnLog {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -3910,7 +3910,7 @@ a:visited {
     outline: 0;
     cursor: pointer;
   }
-  .btn:active {
+  .btnLog:active {
     -webkit-transform: translate(-50%, -48%);
     transform: translate(-50%, -48%);
     outline: 0;
