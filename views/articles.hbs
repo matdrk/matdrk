@@ -71,12 +71,12 @@
                                     <ul class="collection m-tb-2 left-align">
                                         {{#each dbComment}}
                                         <li class="collection-item avatar">
-                                            <img src="images/team/team1.jpg" alt="" class="circle admin">
+                                            <img src="{{ imgAuthor }}" alt="" class="circle admin">
                                             <span class="title">{{ author }}
                                             </span>
                                             <p><span class="comment-info"><i
-                                                        class="fa fa-calendar-check-o"></i>{{ createDate }}</span></p>
-                                            <p> {{content}} </p>
+                                                        class="fa fa-calendar-check-o"></i>{{ formatDate }}</span></p>
+                                            <p> {{ stripTags content}} </p>
                                         </li>
                                         {{/each }}
                                     </ul>
@@ -98,6 +98,14 @@
                                         <label></label>
                                         <input type="text" name="author" value="{{ sess.name }}" required>
                                     </div>
+                                    <div class="input-field col s12">
+                                        <label></label>
+                                        <input type="text" name="authorId" value="{{ sess.userId }}" required>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <label></label>
+                                        <input type="text" name="imgAuthor" value="{{ sess.imgUser }}" required>
+                                    </div>
                                     <div>
                                         <h4><label for=""><u>Contenu :</u></label></h4>
                                         <div class="control">
@@ -111,6 +119,7 @@
                             </form>
                         </div>
                         {{/if }}
+
                     </div>
                 </div>
             </div>

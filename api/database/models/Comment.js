@@ -4,10 +4,14 @@ const CommentSchema = new mongoose.Schema ({
     ref         : String ,
     content     : String ,
     author      : String ,
-    imageAuthor : String ,
+    authorId    : String ,
+    imgAuthor : String ,
     createDate  : {
         type    : Date ,
         default : new Date()
+    },
+    formatDate: {
+        type: String,
     }
 
 })

@@ -11,6 +11,8 @@ const express        = require('express')
 ,     mongoStore     = MongoStore(expressSession)
 ,     user           = require('./api/controllers/user')
 ,     admin          = require('./api/controllers/adminPage')
+,    { stripTags }   = require('./helpers/hds')
+
 
 // Router
 ,     routes         = require('./api/index')
@@ -66,16 +68,19 @@ const Handlebars    = require("handlebars")
 MomentHandler.registerHelpers(Handlebars);
 
 // Handlebars
-app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
+app.engine('hbs', hbs({ 
+    helpers: { stripTags: stripTags },
+    extname: 'hbs', 
+    defaultLayout: 'main' 
+}));
 app.set('view engine', 'hbs');
 app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
     next();
 })
-
 //user or not user
 app.use('*', function(req, res, next) {
-    res.locals.user = req.session.userId;
+    res.locals.user    = req.session.userId
     next()
 });
 
