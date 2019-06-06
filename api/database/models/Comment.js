@@ -5,7 +5,7 @@ const CommentSchema = new mongoose.Schema ({
     content     : String ,
     author      : String ,
     authorId    : String ,
-    imgAuthor : String ,
+    imgAuthor   : String ,
     createDate  : {
         type    : Date ,
         default : new Date()
