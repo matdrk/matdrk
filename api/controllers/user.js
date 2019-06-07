@@ -44,9 +44,14 @@ router.get('/', async (req, res, next) => {
 })
 
 router.post('/loginAuth', async (req, res, next) => {
-    const { email, password } = req.body;
 
 
+    let userAuth = await User.findOne({ email: req.body.email });
+    if (!userAuth) {
+        console.log("pas ds la db");        
+        res.redirect('/');
+    }else{
+        const { email, password } = req.body;
     User.findOne({ email }, (error, User) => {
 
         req.session.email = User.email;
@@ -91,6 +96,7 @@ router.post('/loginAuth', async (req, res, next) => {
             }
         }
     })
+    }
 })
 
 module.exports = router;
