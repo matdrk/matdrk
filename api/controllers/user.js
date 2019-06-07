@@ -24,12 +24,10 @@ router.post('/register', async (req, res, next) => {
     User.create(
         req.body, (error, user) => {
             if (error) {
-
                 const registerError = Object.keys(error.errors).map(key => error.errors[key].message);
                 req.flash('registerError', registerError)
                 req.flash('data', req.body)
                 return res.redirect('/login')
-
             }
             console.log(req.body);
             res.redirect('/login')
@@ -38,15 +36,17 @@ router.post('/register', async (req, res, next) => {
 })
 
 router.get('/', async (req, res, next) => {
-
     res.render('login')
 
 })
 
 router.post('/loginAuth', async (req, res, next) => {
-    const { email, password } = req.body;
+    const { email, password } = req.body
+   // ,     dbUser = await User.find({});
+    console.log('1');
 
     User.findOne({ email }, (error, User) => {
+        console.log('2');
 
         req.session.email = User.email;
         req.session.name = User.name;
@@ -54,9 +54,12 @@ router.post('/loginAuth', async (req, res, next) => {
         req.session.imgUser = User.imgUser;
         req.session.userId = User._id;
         sess = req.session;
+        console.log('3');
 
         if (User) {
+            console.log('4');
             if (req.session.status === 'user') {
+                console.log('5');
                 bcrypt.compare(password, User.password, (error, same) => {
                     if (same) {
                         req.session.userId = User._id;
@@ -70,8 +73,7 @@ router.post('/loginAuth', async (req, res, next) => {
                         res.redirect('/login')
                     }
                 })
-            }
-            else if (req.session.status === 'admin') {
+            } else if (req.session.status === 'admin') {
                 bcrypt.compare(password, User.password, (error, same) => {
                     if (same) {
                         req.session.userId = User._id;

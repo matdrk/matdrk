@@ -114,8 +114,6 @@ router.post('/edit/articlePost/:id', async (req, res, next) => {
     // const { img } = req.files
     // const uploadFile = path.resolve(__dirname, '../..', 'public/images/artblog', img.name);
 
-
-
     article.findOneAndUpdate(
         query, {
             ...req.body
@@ -150,7 +148,5 @@ router.get('/delete/comment/:id', (req, res) => {
         });
     res.redirect('/admin');
 });
-
-
 
 module.exports = router;
