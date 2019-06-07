@@ -6,6 +6,7 @@ const express = require('express')
     , fs = require('fs')
     , User = require('../database/models/User')
     , article = require('../database/models/Article')
+    , comment = require('../database/models/Comment')
 
 
 router.get('/', async (req, res, next) => {
@@ -84,9 +85,10 @@ router.get('/user/del/:id', (req, res) => {
 
 router.get('/edit/article/:id', async (req, res, next) => {
     const dbArticles = await article.findById(req.params.id)
+    ,     dbComment  = await comment.find({ref:dbArticles._id})
     if (req.session.userId) {
         console.log(dbArticles);
-        return res.render("editArticle", { dbArticles })
+        return res.render("editArticle", { dbArticles, dbComment })
     }
     res.render('/user/login')
 })
@@ -134,6 +136,20 @@ router.post('/edit/articlePost/:id', async (req, res, next) => {
             }
         });
 })
+
+router.get('/delete/comment/:id', (req, res) => {
+    comment.findByIdAndRemove(
+        req.params.id,
+        { useFindAndModify: false },
+        function (err) {
+            if (!err) {
+                console.log('del ok');
+            } else {
+                res.redirect('/admin');
+            }
+        });
+    res.redirect('/admin');
+});
 
 
 
