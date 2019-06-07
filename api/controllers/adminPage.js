@@ -54,7 +54,21 @@ router.post('/edit/userPost/:id', async (req, res, next) => {
         });
 })
 
-router.get('/delete/:id', (req, res) => {
+router.get('/article/del/:id', (req, res) => {
+    article.findByIdAndRemove(
+        req.params.id,
+        { useFindAndModify: false },
+        function (err) {
+            if (!err) {
+                console.log('del ok');
+            } else {
+                res.redirect('/admin');
+            }
+        });
+    res.redirect('/admin');
+});
+
+router.get('/user/del/:id', (req, res) => {
     User.findByIdAndRemove(
         req.params.id,
         { useFindAndModify: false },
