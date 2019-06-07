@@ -46,6 +46,7 @@ router.get('/', async (req, res, next) => {
 router.post('/loginAuth', async (req, res, next) => {
     const { email, password } = req.body;
 
+
     User.findOne({ email }, (error, User) => {
 
         req.session.email = User.email;
@@ -54,6 +55,8 @@ router.post('/loginAuth', async (req, res, next) => {
         req.session.imgUser = User.imgUser;
         req.session.userId = User._id;
         sess = req.session;
+        
+        
 
         if (User) {
             if (req.session.status === 'user') {
